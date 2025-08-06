@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,76 +9,101 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
+      background: linear-gradient(to right, #e3f2fd, #ffffff);
       color: #333;
     }
     header {
-      background: #1a73e8;
+      background: linear-gradient(135deg, #1a73e8, #0f62c1);
       color: white;
       padding: 2rem 1rem;
       text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
     header p {
       margin-top: 0.5rem;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
     nav {
       display: flex;
       justify-content: center;
       background: #0f62c1;
-      padding: 0.5rem;
+      padding: 1rem 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
     nav a {
       color: white;
-      margin: 0 1rem;
+      margin: 0 1.5rem;
       text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffe600;
     }
     section {
-      padding: 2rem;
-      max-width: 1000px;
+      padding: 3rem 2rem;
+      max-width: 1100px;
       margin: auto;
     }
     h1, h2 {
       color: #1a73e8;
-    }
-    footer {
-      background: #333;
-      color: white;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-    .card {
-      background: white;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .card i {
-      font-size: 2rem;
-      color: #1a73e8;
-      margin-bottom: 0.5rem;
     }
     .intro {
       text-align: center;
-      font-size: 1.25rem;
-      padding: 1rem;
-      background: #e3f2fd;
-      margin-bottom: 2rem;
+      font-size: 1.2rem;
+      background: #ffffff;
       border-left: 5px solid #1a73e8;
+      padding: 1rem;
+      margin: 2rem auto;
+      max-width: 800px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background: white;
+      padding: 2rem 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card i {
+      font-size: 2.5rem;
+      color: #1a73e8;
+      margin-bottom: 1rem;
+    }
+    footer {
+      background: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.95rem;
+    }
+    a {
+      color: #0f62c1;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    #contact p {
+      text-align: center;
+      font-size: 1.1rem;
     }
   </style>
 </head>
@@ -116,7 +140,7 @@
 
   <section id="about">
     <h2>About Us</h2>
-    <p>SFSS (Super Fast Safety Service) provides fast, reliable, and affordable delivery solutions across India. With our fleet of bikes, Ecco, and Bolero Pickup, we handle urgent parcels, business courier needs, and ecommerce deliveries with ease. We serve individuals and businesses alike with full staff and same-day delivery options.</p>
+    <p style="text-align:center; max-width: 800px; margin: auto;">SFSS (Super Fast Safety Service) provides fast, reliable and affordable delivery solutions across India. With our bike, Ecco and Bolero pickups, we handle urgent parcels, business courier needs and e-commerce deliveries with ease. We serve both individuals and businesses with full staff and same-day delivery options.</p>
   </section>
 
   <section id="contact">
@@ -133,3 +157,4 @@
 </body>
 
 </html>
+
