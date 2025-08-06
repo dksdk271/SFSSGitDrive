@@ -1,85 +1,235 @@
 <!DOCTYPE html>
- <html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SFSS Courier - Your Trusted Delivery Partner</title>
-  <style>
-  body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
-  }
-  .container {
-  width: 80%;
-  margin: 20px auto;
-  background-color: #fff;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  .logo-section {
-  text-align: center;
-  padding-bottom: 20px;
-  }
-  .logo {
-  max-width: 300px;
-  height: auto;
-  }
-  .welcome-text {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 1.2em;
-  }
-  .services-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  padding-bottom: 20px;
-  }
-  .service-item {
-  background-color: #f9f9f9;
-  padding: 15px;
-  border-radius: 5px;
-  text-align: center;
-  }
-  .about-section {
-  padding-bottom: 20px;
-  }
-  .contact-section {
-  text-align: center;
-  padding-bottom: 20px;
-  }
-  .contact-info p {
-  margin: 5px 0;
-  }
-  </style>
- </head>
- <body>
-  <div class="container">
-  <div class="logo-section">
-  <img src="http://googleusercontent.com/file_content/1" alt="SFSS Courier Logo" class="logo">
-  </div>
-  <div class="welcome-text">
-  <h2>Welcome to SFSS Courier</h2>
-  <p>Your trusted delivery partner across India.</p>
-  </div>
-  <div class="services-section">
-  <div class="service-item">🚚 Local Delivery</div>
-  <div class="service-item">⚡ Same Day Delivery</div>
-  <div class="service-item">📦 Inter-City Transport</div>
-  <div class="service-item">🧾 Document Delivery</div>
-  <div class="service-item">🛍️ E-commerce Parcel Handling</div>
-  <div class="service-item">📈 Bulk Delivery for Shops</div>
-  </div>
-  <div class="contact-section">
-  <h3>Contact Us</h3>
-  <div class="contact-info">
-  <p>Call us: 9625913136</p>
-  <p>Email: dksdk271@gmail.com</p>
-  </div>
-  </div>
-  </div>
- </body>
- </html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SFSS Courier - Your Trusted Delivery Partner</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        :root {
+            --primary-color: #004d9c; /* Dark blue */
+            --secondary-color: #ff6f00; /* Orange */
+            --background-light: #f4f7f9;
+            --text-dark: #333;
+            --text-light: #fff;
+            --card-bg: #fff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--card-bg);
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            display: block;
+            width: 150px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 60px 0;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .service-card span {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+        }
+
+        .service-card h3 {
+            margin-top: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            font-size: 1.1rem;
+        }
+
+        .contact-info a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-info a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: #ccc;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 20px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .services, .contact {
+                padding: 40px 0;
+            }
+            .service-grid {
+                grid-template-columns: 1fr; /* Stack cards on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <img src="SFSS LOGO NEW.jpeg" alt="SFSS Courier Logo" class="logo">
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Welcome to SFSS Courier</h1>
+                <p>Your trusted delivery partner across India.</p>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="service-grid">
+                    <div class="service-card">
+                        <span>🚚</span>
+                        <h3>Local Delivery</h3>
+                    </div>
+                    <div class="service-card">
+                        <span>⚡</span>
+                        <h3>Same Day Delivery</h3>
+                    </div>
+                    <div class="service-card">
+                        <span>📦</span>
+                        <h3>Inter-City Transport</h3>
+                    </div>
+                    <div class="service-card">
+                        <span>🧾</span>
+                        <h3>Document Delivery</h3>
+                    </div>
+                    <div class="service-card">
+                        <span>🛍️</span>
+                        <h3>E-commerce Parcel Handling</h3>
+                    </div>
+                    <div class="service-card">
+                        <span>📈</span>
+                        <h3>Bulk Delivery for Shops</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <div class="container">
+                <h2>Get in Touch</h2>
+                <div class="contact-info">
+                    <p>Call Us: <a href="tel:+919625913136">9625913136</a></p>
+                    <p>Email: <a href="mailto:dksdk271@gmail.com">dksdk271@gmail.com</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SFSS Courier. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
