@@ -1,154 +1,195 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SFSS - Super Fast Safety Service | All India Courier & Transport Solutions">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SFSS Courier - Super Fast Safety Service India" />
   <title>SFSS Courier</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #e3f2fd, #ffffff);
-      color: #333;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
     }
+
     header {
-      background: linear-gradient(135deg, #1a73e8, #0f62c1);
+      background-color: #d32f2f;
       color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
-    }
-    header p {
-      margin-top: 0.5rem;
-      font-size: 1.3rem;
-    }
-    nav {
+      padding: 1.2rem 2rem;
       display: flex;
-      justify-content: center;
-      background: #0f62c1;
-      padding: 1rem 0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      justify-content: space-between;
+      align-items: center;
     }
-    nav a {
+
+    header img {
+      height: 60px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-left: 1rem;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #d32f2f, #e57373);
       color: white;
-      margin: 0 1.5rem;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #ffe600;
-    }
-    section {
-      padding: 3rem 2rem;
-      max-width: 1100px;
-      margin: auto;
-    }
-    h1, h2 {
-      color: #1a73e8;
+      padding: 4rem 2rem;
       text-align: center;
     }
-    .intro {
-      text-align: center;
-      font-size: 1.2rem;
-      background: #ffffff;
-      border-left: 5px solid #1a73e8;
-      padding: 1rem;
-      margin: 2rem auto;
-      max-width: 800px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .card {
-      background: white;
-      padding: 2rem 1rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      text-align: center;
-      transition: transform 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    .card i {
+
+    .hero h2 {
       font-size: 2.5rem;
-      color: #1a73e8;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    .about, .contact {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .about h2, .contact h2 {
+      color: #d32f2f;
       margin-bottom: 1rem;
     }
+
     footer {
-      background: #1a1a1a;
+      background: #222;
+      color: #ddd;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .social-icons a {
       color: white;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      color: #ffccbc;
+    }
+
+    /* About Section Animation */
+    #why-choose-us {
+      background: linear-gradient(135deg, #e3f2fd, #ffffff);
+      padding: 3rem 2rem;
       text-align: center;
-      padding: 1.5rem 1rem;
-      font-size: 0.95rem;
+      animation: fadeIn 2s ease-in-out;
     }
-    a {
-      color: #0f62c1;
+
+    #why-choose-us h2 {
+      font-size: 2.5rem;
+      color: #1a73e8;
+      margin-bottom: 2rem;
     }
-    a:hover {
-      text-decoration: underline;
+
+    .reasons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: auto;
     }
-    #contact p {
-      text-align: center;
+
+    .reason-card {
+      background: #ffffff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .reason-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .reason-card i {
+      font-size: 2rem;
+      color: #1a73e8;
+      margin-bottom: 0.8rem;
+    }
+
+    .reason-card p {
       font-size: 1.1rem;
+      color: #333;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
     }
   </style>
 </head>
 
 <body>
   <header>
-    <h1>Welcome to SFSS Courier</h1>
-    <p>Your trusted delivery partner across India.</p>
+    <div style="display:flex; align-items:center;">
+      <img src="SFSS LOGO.png" alt="SFSS Logo" />
+      <h1>SFSS Courier</h1>
+    </div>
   </header>
 
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section class="intro">
-    <p>🚚 Local Delivery &nbsp;&nbsp; ⚡ Same Day Delivery &nbsp;&nbsp; 📦 Inter-City Transport &nbsp;&nbsp; 🧾 Document Delivery &nbsp;&nbsp; 🛍️ E-commerce Parcel Handling &nbsp;&nbsp; 📈 Bulk Delivery for Shops</p>
-    <p><strong>Call us:</strong> <a href="tel:+919625913136">9625913136</a> &nbsp;&nbsp; | &nbsp;&nbsp; <strong>Email:</strong> <a href="mailto:dksdk271@gmail.com">dksdk271@gmail.com</a></p>
+  <section class="hero">
+    <h2>Super Fast Safety Service</h2>
+    <p>Local & Intercity Delivery | Business Courier | E-Commerce Parcel Handling</p>
   </section>
 
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="card"><i class="fas fa-motorcycle"></i><p>Local Delivery</p></div>
-      <div class="card"><i class="fas fa-bolt"></i><p>Same Day Delivery</p></div>
-      <div class="card"><i class="fas fa-route"></i><p>Inter-City Transport</p></div>
-      <div class="card"><i class="fas fa-briefcase"></i><p>Business Courier</p></div>
-      <div class="card"><i class="fas fa-file-alt"></i><p>Document Delivery</p></div>
-      <div class="card"><i class="fas fa-box"></i><p>E-commerce Parcel</p></div>
-      <div class="card"><i class="fas fa-store"></i><p>Bulk for Shops</p></div>
+  <section class="about">
+    <h2>About Us</h2>
+    <p>
+      SFSS (Super Fast Safety Service) provides fast, reliable and affordable delivery solutions across India. With our bike, Ecco and Bolero pickups, we handle urgent parcels, business courier needs and e-commerce deliveries with ease. We serve both individuals and businesses with full staff and same-day delivery options.
+    </p>
+  </section>
+
+  <section id="why-choose-us">
+    <h2>Why Choose SFSS Courier?</h2>
+    <div class="reasons">
+      <div class="reason-card">
+        <i class="fas fa-stopwatch"></i>
+        <p><strong>Super Fast Delivery</strong><br>We deliver within hours, not days.</p>
+      </div>
+      <div class="reason-card">
+        <i class="fas fa-map-marked-alt"></i>
+        <p><strong>Pan-India Network</strong><br>We reach remote and urban locations alike.</p>
+      </div>
+      <div class="reason-card">
+        <i class="fas fa-users-cog"></i>
+        <p><strong>Dedicated Team</strong><br>Professional staff for smooth handling.</p>
+      </div>
+      <div class="reason-card">
+        <i class="fas fa-lock"></i>
+        <p><strong>Secure Handling</strong><br>Every parcel is treated with care and safety.</p>
+      </div>
+      <div class="reason-card">
+        <i class="fas fa-wallet"></i>
+        <p><strong>Affordable Rates</strong><br>Competitive pricing with premium service.</p>
+      </div>
     </div>
   </section>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p style="text-align:center; max-width: 800px; margin: auto;">SFSS (Super Fast Safety Service) provides fast, reliable and affordable delivery solutions across India. With our bike, Ecco and Bolero pickups, we handle urgent parcels, business courier needs and e-commerce deliveries with ease. We serve both individuals and businesses with full staff and same-day delivery options.</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p><strong>Owner:</strong> Dileep Kumar</p>
-    <p><strong>Phone:</strong> <a href="tel:+919625913136">9625913136</a></p>
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p><strong>WhatsApp:</strong> <a href="https://wa.me/919627051087">9627051087</a></p>
+    <p><strong>Phone:</strong> +91-9625913136</p>
     <p><strong>Email:</strong> <a href="mailto:dksdk271@gmail.com">dksdk271@gmail.com</a></p>
-    <p><strong>Address:</strong> Noida Sector 63A, Pin – 201301</p>
+    <p><strong>Address:</strong> Noida Sector 63A, Uttar Pradesh, INDIA</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+    </div>
   </section>
 
   <footer>
