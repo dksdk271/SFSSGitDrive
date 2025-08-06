@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SFSS Courier - Your Trusted Delivery Partner</title>
+    <title>SFSS Courier - Professional & Trusted Delivery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
         :root {
-            --primary-color: #004d9c; /* Dark blue */
-            --secondary-color: #ff6f00; /* Orange */
+            --primary-color: #004d9c; /* Deep Blue */
+            --secondary-color: #ff6f00; /* Bright Orange */
             --background-light: #f4f7f9;
+            --background-dark: #2c3e50;
             --text-dark: #333;
             --text-light: #fff;
             --card-bg: #fff;
@@ -44,7 +45,8 @@
 
         .logo {
             display: block;
-            width: 150px;
+            width: 180px; /* Thoda bada logo */
+            margin: 0 auto; /* Center logo */
         }
 
         /* Hero Section */
@@ -52,17 +54,40 @@
             background-color: var(--primary-color);
             color: var(--text-light);
             text-align: center;
-            padding: 80px 20px;
+            padding: 100px 20px;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: 3rem;
+            margin-bottom: 15px;
             font-weight: 700;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+        }
+
+        /* About Us Section */
+        .about-us {
+            padding: 80px 0;
+            background-color: var(--background-light);
+        }
+        
+        .about-us h2, .services h2, .contact h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .about-us p {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
         }
 
         /* Services Section */
@@ -70,16 +95,9 @@
             padding: 60px 0;
         }
 
-        .services h2 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            color: var(--primary-color);
-        }
-
         .service-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
         }
 
@@ -88,80 +106,94 @@
             padding: 30px;
             border-radius: 10px;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
-        .service-card span {
-            font-size: 2.5rem;
+        .service-card .icon {
+            font-size: 3rem;
             color: var(--secondary-color);
+            transition: color 0.3s ease;
+        }
+
+        .service-card:hover .icon {
+            color: var(--primary-color);
         }
 
         .service-card h3 {
             margin-top: 15px;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
 
         /* Contact Section */
         .contact {
-            background-color: var(--primary-color);
+            background-color: var(--background-dark);
             color: var(--text-light);
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
         }
-
-        .contact h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
+        
+        .contact-info {
+            font-size: 1.2rem;
         }
 
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            font-size: 1.1rem;
+        .contact-info p {
+            margin-bottom: 10px;
         }
 
         .contact-info a {
             color: var(--text-light);
             text-decoration: none;
             transition: color 0.3s ease;
+            margin: 0 15px; /* Links ke beech space */
+            display: inline-block;
         }
         
         .contact-info a:hover {
             color: var(--secondary-color);
         }
+        
+        .contact-info i {
+            margin-right: 8px;
+        }
 
         /* Footer */
         footer {
-            background-color: var(--text-dark);
+            background-color: var(--background-dark);
             color: #ccc;
             text-align: center;
             padding: 20px 0;
             font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         /* Media Queries for Responsiveness */
         @media (max-width: 768px) {
             .hero {
-                padding: 60px 20px;
+                padding: 80px 20px;
             }
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
             .hero p {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
-            .services, .contact {
-                padding: 40px 0;
+            .about-us h2, .services h2, .contact h2 {
+                font-size: 2rem;
+            }
+            .about-us, .services, .contact {
+                padding: 50px 0;
             }
             .service-grid {
                 grid-template-columns: 1fr; /* Stack cards on small screens */
+            }
+            .logo {
+                width: 150px;
             }
         }
     </style>
@@ -178,36 +210,43 @@
         <section class="hero">
             <div class="container">
                 <h1>Welcome to SFSS Courier</h1>
-                <p>Your trusted delivery partner across India.</p>
+                <p>Your trusted delivery partner across India. We deliver with speed and safety.</p>
+            </div>
+        </section>
+
+        <section class="about-us">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>SFSS Courier, also known as Super Fast Safety Service, is dedicated to providing efficient and reliable courier solutions nationwide. With a commitment to speed and safety, we ensure that every parcel, document, and product is handled with the utmost care, from local deliveries to inter-city transport. Our goal is to be your most trusted logistics partner, offering seamless services tailored to your needs.</p>
             </div>
         </section>
 
         <section class="services">
             <div class="container">
-                <h2>Our Services</h2>
+                <h2>Our Professional Services</h2>
                 <div class="service-grid">
                     <div class="service-card">
-                        <span>🚚</span>
+                        <span class="icon">🚚</span>
                         <h3>Local Delivery</h3>
                     </div>
                     <div class="service-card">
-                        <span>⚡</span>
+                        <span class="icon">⚡</span>
                         <h3>Same Day Delivery</h3>
                     </div>
                     <div class="service-card">
-                        <span>📦</span>
+                        <span class="icon">📦</span>
                         <h3>Inter-City Transport</h3>
                     </div>
                     <div class="service-card">
-                        <span>🧾</span>
+                        <span class="icon">🧾</span>
                         <h3>Document Delivery</h3>
                     </div>
                     <div class="service-card">
-                        <span>🛍️</span>
+                        <span class="icon">🛍️</span>
                         <h3>E-commerce Parcel Handling</h3>
                     </div>
                     <div class="service-card">
-                        <span>📈</span>
+                        <span class="icon">📈</span>
                         <h3>Bulk Delivery for Shops</h3>
                     </div>
                 </div>
@@ -216,10 +255,14 @@
 
         <section class="contact">
             <div class="container">
-                <h2>Get in Touch</h2>
+                <h2>Get in Touch with Us</h2>
                 <div class="contact-info">
-                    <p>Call Us: <a href="tel:+919625913136">9625913136</a></p>
-                    <p>Email: <a href="mailto:dksdk271@gmail.com">dksdk271@gmail.com</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Address: Sector 63A, Noida, Uttar Pradesh, INDIA</p>
+                    <p>
+                        <a href="tel:+919625913136"><i class="fas fa-phone-alt"></i> Call: 9625913136</a>
+                        <a href="https://wa.me/919625913136" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp: 9625913136</a>
+                    </p>
+                    <p><a href="mailto:dksdk271@gmail.com"><i class="fas fa-envelope"></i> Email: dksdk271@gmail.com</a></p>
                 </div>
             </div>
         </section>
