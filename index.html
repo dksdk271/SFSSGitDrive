@@ -3,40 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SFSS Courier - Premium Delivery Partner</title>
-    <!-- Google Fonts for a distinct and professional typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>SFSS Courier - Aadhunik Web App</title>
+    <!-- Google Fonts for a clean, professional look -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <!-- Font Awesome for modern icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* CSS Variables for a clean, maintainable style */
+        /* CSS Variables for easy customization */
         :root {
-            --primary-color: #2c3e50; /* Dark Charcoal */
-            --secondary-color: #e67e22; /* Vibrant Orange */
-            --accent-color: #3498db; /* Sky Blue */
-            --background-main: #ecf0f1; /* Light Gray */
-            --background-dark: #29323c; /* Darker Charcoal */
-            --text-dark: #34495e;
-            --text-light: #ecf0f1;
+            --primary-color: #003366; /* Deep Navy Blue */
+            --secondary-color: #FF6F61; /* Coral Red */
+            --text-dark: #333;
+            --text-light: #f4f4f9;
+            --background-light: #f4f4f9;
+            --background-dark: #222;
             --card-bg: #fff;
-            --border-radius: 8px;
-            --box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            --border-radius: 12px;
+            --box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
 
-        /* Universal Styling & Box Model Reset */
+        /* Universal Styling */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth; /* Smooth scrolling for navigation links */
+        }
+
         body {
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Roboto', sans-serif;
             line-height: 1.6;
-            background-color: var(--background-main);
+            background-color: var(--background-light);
             color: var(--text-dark);
             overflow-x: hidden;
-            scroll-behavior: smooth;
         }
 
         .container {
@@ -45,36 +47,13 @@
             padding: 0 20px;
         }
 
-        /* Typography & Headings */
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.8rem;
-            color: var(--primary-color);
-            margin-bottom: 50px;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background-color: var(--secondary-color);
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
-
         /* Header & Navigation */
         header {
             background-color: var(--card-bg);
             padding: 15px 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
+            position: fixed;
+            width: 100%;
             top: 0;
             z-index: 1000;
         }
@@ -86,99 +65,88 @@
         }
 
         .logo {
-            height: 50px;
+            height: 60px; /* Logo size thoda bada kiya gaya hai */
         }
 
         .main-nav a {
             color: var(--primary-color);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             padding: 10px 15px;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
+        
+        .main-nav a:hover, .main-nav a.active {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
         }
 
-        .main-nav a:hover {
-            color: var(--secondary-color);
-        }
-        
-        .nav-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: var(--primary-color);
-        }
-        
-        .nav-list {
-            display: flex;
-            list-style: none;
-        }
-        
-        /* Hero Section with a modern, clean look */
+        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://placehold.co/1920x800/ecf0f1/2c3e50?text=SFSS+Courier') no-repeat center center/cover;
+            /* Nayi image aur gradient background */
+            background: linear-gradient(to right, rgba(0, 51, 102, 0.9), rgba(255, 111, 97, 0.8)), url('https://storage.googleapis.com/g.co/rp/a1/d5/g.co-rp-a1-d5-8839016259062332766-image.png') no-repeat center center/cover;
+            background-size: cover;
+            background-position: center;
             color: var(--text-light);
             text-align: center;
-            padding: 150px 20px;
+            padding: 200px 20px;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             margin-bottom: 20px;
-            letter-spacing: 1.5px;
+            font-family: 'Playfair Display', serif;
         }
 
         .hero p {
             font-size: 1.3rem;
             max-width: 800px;
             margin: 0 auto 30px;
-            font-family: 'Open Sans', sans-serif;
         }
         
         .hero-btn {
             display: inline-block;
-            background-color: var(--secondary-color);
-            color: var(--text-light);
+            background-color: var(--card-bg);
+            color: var(--primary-color);
             text-decoration: none;
             padding: 15px 30px;
             border-radius: 50px;
-            font-weight: 600;
-            letter-spacing: 1px;
+            font-weight: 700;
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .hero-btn:hover {
-            background-color: #d35400;
-            transform: translateY(-3px);
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            transform: translateY(-5px);
         }
 
-        /* About Us Section with a two-column layout */
-        .about {
-            padding: 80px 0;
-            background-color: var(--card-bg);
+        /* Section Styling */
+        section {
+            padding: 100px 0;
         }
         
-        .about-content-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 50px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* About Us Section */
+        .about-us-grid {
+            display: flex;
             align-items: center;
+            gap: 40px;
         }
 
         .about-text {
-            padding-right: 20px;
+            flex: 1;
         }
 
-        .about-text h2 {
-            font-size: 2.2rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        .about-text p {
-            font-size: 1.1rem;
-            color: #555;
-            line-height: 1.8;
-            margin-bottom: 20px;
+        .about-image {
+            flex: 1;
         }
         
         .about-image img {
@@ -188,73 +156,86 @@
             box-shadow: var(--box-shadow);
         }
         
-        /* Services Section with a fresh card design */
-        .services, .serving {
-            padding: 80px 0;
-            background-color: var(--background-main);
+        /* Services & Features Section */
+        .services-section, .features-section {
+            background-color: var(--background-light);
         }
-        
-        .service-grid, .serving-grid {
+
+        .services-grid, .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
         
-        .service-card, .serving-card {
+        .service-card, .feature-card {
             background-color: var(--card-bg);
-            padding: 40px 25px;
+            padding: 30px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
         
-        .service-card:hover, .serving-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        .service-card:hover, .feature-card:hover {
+            transform: translateY(-8px);
+            background-color: var(--primary-color);
+            color: var(--text-light);
         }
 
-        .service-card .icon-container, .serving-card .icon-container {
-            width: 80px;
-            height: 80px;
-            background-color: var(--accent-color);
+        .service-card:hover h3, .feature-card:hover h3 {
+            color: var(--secondary-color);
+        }
+
+        .service-card .icon-container, .feature-card .icon-container {
+            width: 70px;
+            height: 70px;
+            background-color: var(--secondary-color);
             color: var(--text-light);
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin: 0 auto 20px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        
-        .service-card:hover .icon-container, .serving-card:hover .icon-container {
-            background-color: var(--secondary-color);
-            transform: rotateY(360deg);
         }
 
-        /* Contact & Quote Form Section */
-        .contact-cta {
-            background-color: var(--primary-color);
+        .service-card h3, .feature-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+
+        .service-card p, .feature-card p {
+            font-size: 1rem;
+            color: #666;
+            transition: color 0.3s ease;
+        }
+        
+        .service-card:hover p, .feature-card:hover p {
             color: var(--text-light);
-            padding: 80px 0;
+        }
+        
+        /* Contact & CTA Section */
+        .contact-cta {
+            background-color: var(--background-dark);
+            color: var(--text-light);
         }
         
         .contact-form-section {
-            background-color: var(--background-dark);
-            color: var(--text-light);
+            background-color: var(--card-bg);
+            color: var(--text-dark);
             padding: 40px;
             border-radius: var(--border-radius);
             max-width: 650px;
             margin: 0 auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: var(--box-shadow);
         }
         
         .contact-form-section h3 {
             font-size: 2rem;
             margin-bottom: 25px;
             text-align: center;
-            color: var(--secondary-color);
+            color: var(--primary-color);
         }
         
         .contact-form-section form {
@@ -264,31 +245,19 @@
         }
 
         .form-group label {
-            font-weight: 600;
-            margin-bottom: 8px;
+            font-weight: 500;
+            margin-bottom: 5px;
             display: block;
         }
         
         .form-group input, .form-group textarea {
+            width: 100%;
             padding: 12px;
-            border: 1px solid #555;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            background-color: #444;
-            color: var(--text-light);
             font-size: 1rem;
-            transition: border-color 0.3s ease;
         }
         
-        .form-group input::placeholder, .form-group textarea::placeholder {
-            color: #999;
-        }
-
-        .form-group input:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-color);
-            background-color: #555;
-        }
-
         .form-group.captcha {
             display: flex;
             align-items: center;
@@ -302,62 +271,82 @@
             padding: 15px;
             border-radius: 5px;
             font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        
-        .submit-button:hover {
-            background-color: #d35400;
-        }
-        
-        /* CTA Cards */
-        .cta-section {
-            padding: 60px 0;
-            background-color: var(--background-main);
-        }
-
-        .cta-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .cta-card {
-            background-color: var(--card-bg);
-            color: var(--text-dark);
-            text-align: center;
-            padding: 40px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-        }
-
-        .cta-card .number {
-            font-size: 3rem;
-            color: var(--secondary-color);
             font-weight: 700;
-        }
-
-        .cta-card h4 {
-            font-size: 1.5rem;
-            margin: 15px 0;
-            color: var(--primary-color);
-        }
-
-        .cta-card .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--text-light);
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
+            cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
         
-        .cta-card .btn:hover {
-            background-color: #2980b9;
+        .submit-button:hover {
+            background-color: #e65c52;
             transform: translateY(-2px);
+        }
+        
+        /* Modal Popup Styling */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.6); /* Black background with opacity */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .modal-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .modal-content p {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .modal-content a {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .modal-content a:hover {
+            background-color: #002244;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: var(--secondary-color);
         }
 
         /* Footer */
@@ -374,71 +363,63 @@
             margin-bottom: 40px;
         }
 
-        .footer-about h4, .footer-menu h4 {
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-        }
-
-        .footer-about p, .footer-about .contact-link, .footer-menu li {
+        .footer-about p, .footer-about .contact-link {
             color: #ccc;
-            margin-bottom: 10px;
         }
         
-        .footer-about .contact-link a, .footer-menu ul a {
+        .footer-about .contact-link a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .footer-menu h4 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .footer-menu ul {
+            list-style: none;
+        }
+        
+        .footer-menu ul a {
             color: #ccc;
             text-decoration: none;
             transition: color 0.3s ease;
         }
         
-        .footer-about .contact-link a:hover, .footer-menu ul a:hover {
+        .footer-menu ul a:hover {
             color: var(--secondary-color);
-        }
-        
-        .footer-menu ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .social-links {
-            margin-top: 20px;
         }
         
         .social-links a {
             color: #fff;
             font-size: 1.5rem;
             margin-right: 15px;
-            transition: color 0.3s ease, transform 0.3s ease;
+            transition: color 0.3s ease;
         }
         
         .social-links a:hover {
             color: var(--secondary-color);
-            transform: translateY(-2px);
         }
 
         .copyright {
             text-align: center;
             border-top: 1px solid rgba(255,255,255,0.1);
             padding-top: 20px;
-            font-size: 0.9rem;
         }
         
-        /* Responsive design for tablets and mobile phones */
+        /* Responsive design */
         @media (max-width: 992px) {
-            .about-content-grid {
-                grid-template-columns: 1fr;
-            }
-            .about-text {
-                padding-right: 0;
-                order: 2; /* Image will appear first on mobile */
+            .about-us-grid {
+                flex-direction: column;
             }
             .about-image {
-                order: 1;
+                order: -1;
                 margin-bottom: 30px;
             }
             .footer-grid {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr;
             }
             .main-nav {
                 display: none;
@@ -447,20 +428,13 @@
         
         @media (max-width: 768px) {
             .hero {
-                padding: 100px 20px;
+                padding: 150px 20px;
             }
             .hero h1 {
                 font-size: 2.5rem;
             }
             .section-title {
                 font-size: 2rem;
-                margin-bottom: 30px;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-            .contact-form-section {
-                padding: 30px;
             }
         }
     </style>
@@ -472,102 +446,102 @@
             <!-- SFSS Courier Logo -->
             <img src="uploaded:SFSS LOGO NEW.jpeg-639eb171-e739-487a-a145-a5c45a5d8ed6" alt="SFSS Courier Logo" class="logo">
             <nav class="main-nav">
-                <ul class="nav-list">
-                    <li><a href="#about-us">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                    <li><a href="#">Tracking</a></li>
-                </ul>
+                <a href="#about-us">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact Us</a>
+                <a href="#">Tracking</a>
             </nav>
-            <div class="nav-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
         </div>
     </header>
 
     <main>
         <section class="hero">
             <div class="container">
-                <h1>SFSS Courier Goods Transport Service</h1>
-                <p>Welcome to SFSS Courier, your trusted partner for all your transportation and logistics needs across India. We deliver with speed, safety, and reliability.</p>
-                <a href="#contact" class="hero-btn">Get a Free Estimate</a>
+                <h1>
+                    <span style="font-family: 'Playfair Display', serif; font-size: 1.2em; font-weight: 700; color: #FFD700; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">SFSS</span> Courier
+                </h1>
+                <p>Aapka bharosemand delivery partner. Speed, safety aur bharose ke saath.</p>
+                <a href="#contact" class="hero-btn">Free Estimate Lijiye</a>
             </div>
         </section>
 
-        <section id="about-us" class="about">
-            <div class="container about-content-grid">
-                <div class="about-text">
-                    <h2>About SFSS Courier</h2>
-                    <p>At SFSS Courier, we pride ourselves on being more than just a transportation company. We are your strategic partner, dedicated to helping you navigate the complexities of logistics with ease. With years of industry experience and a passion for innovation, we have built a reputation for delivering reliable, cost-effective, and efficient solutions to businesses and individuals alike.</p>
-                    <p>Driven by our passion for logistics and unwavering dedication to our customers, our mission is to provide seamless transportation solutions that empower businesses to thrive. We aim to establish long-lasting partnerships built on trust, transparency, and integrity, while continuously adapting to the evolving needs of our clients and the dynamic landscape of the logistics industry.</p>
-                </div>
-                <div class="about-image">
-                    <img src="uploaded:image_5fa525.jpg-fb9fc5a8-d2fa-4f75-b77a-3bd63615778e" alt="SFSS Courier transport vehicle">
-                </div>
-            </div>
-        </section>
-
-        <section id="services" class="services">
+        <section id="about-us" class="about-us">
             <div class="container">
-                <h2 class="section-title">Our Core Services</h2>
-                <div class="service-grid">
+                <h2 class="section-title">Hamare Baare Mein</h2>
+                <div class="about-us-grid">
+                    <div class="about-text">
+                        <p>SFSS Courier, jise Super Fast Safety Service ke naam se bhi jaana jaata hai, ek dynamic aur customer-centric logistics company hai. Humara lakshya poore desh mein behtareen aur bharosemand courier service dena hai.</p>
+                        <p>Humara mission customer ke saath vishwas, parivartan aur imandari ka rishta banana hai. Hum har parcel, document aur saman ko poori savdhani ke saath handle karte hain, chahe woh local delivery ho ya inter-city transport. SFSS Courier ke saath, aapki delivery hamari zimmedari hai.</p>
+                    </div>
+                    <div class="about-image">
+                        <!-- Nayi image lagai gai hai -->
+                        <img src="https://storage.googleapis.com/g.co/rp/a1/d5/g.co-rp-a1-d5-8839016259062332766-image.png" alt="A friendly delivery agent picking up a parcel from a customer.">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services-section">
+            <div class="container">
+                <h2 class="section-title">Hamari Services</h2>
+                <div class="services-grid">
                     <div class="service-card">
                         <div class="icon-container"><i class="fas fa-suitcase-rolling"></i></div>
                         <h3>Luggage Transport</h3>
-                        <p>Discover seamless luggage transport solutions with SFSS Courier. We ensure your belongings reach their destination safely and on time.</p>
+                        <p>Bina kisi pareshani ke luggage transport solutions. Aapka saaman surakshit aur samay par pahunchega.</p>
                     </div>
                     <div class="service-card">
                         <div class="icon-container"><i class="fas fa-box-open"></i></div>
                         <h3>Part Load Transport</h3>
-                        <p>Experience efficient and cost-effective transportation for your partial loads. We've got you covered for small or partial truckloads across India.</p>
+                        <p>Chhote aur partial loads ke liye cost-effective transportation. Poore Bharat mein humari service hai.</p>
                     </div>
                     <div class="service-card">
                         <div class="icon-container"><i class="fas fa-truck-ramp-box"></i></div>
-                        <h3>Parcel and Courier Services</h3>
-                        <p>Your trusted partner for all your parcel and courier needs throughout India. Our advanced technology and dedication to excellence ensure precision and efficiency.</p>
+                        <h3>Parcel & Courier</h3>
+                        <p>Parcel aur courier ki zarooraton ke liye aapka trusted partner. Hum har shipment ko efficiency se handle karte hain.</p>
                     </div>
                     <div class="service-card">
                         <div class="icon-container"><i class="fas fa-truck-arrow-right"></i></div>
                         <h3>Full Truck Booking</h3>
-                        <p>Announcing our upcoming Full Truck Booking Service with all India transportation. A new level of convenience, efficiency, and reliability for your logistics.</p>
+                        <p>Jald hi launch ho rahi hai Full Truck Booking service. Aapke bade shipments ke liye aasan aur reliable solution.</p>
                     </div>
                 </div>
             </div>
         </section>
         
-        <section class="serving">
+        <section class="features-section">
             <div class="container">
-                <h2 class="section-title">Why Choose SFSS Courier?</h2>
-                <div class="serving-grid">
-                    <div class="serving-card">
+                <h2 class="section-title">SFSS Courier Hi Kyun?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
                         <div class="icon-container"><i class="fas fa-home"></i></div>
                         <h3>Door to Door Service</h3>
-                        <p>We handle the entire shipping process, from collection at your doorstep to delivery at the recipient's location. Enjoy the convenience of hassle-free shipping.</p>
+                        <p>Hum aapke darwaze se saaman uthate hain aur seedhe customer ke darwaze tak pahunchate hain.</p>
                     </div>
-                    <div class="serving-card">
+                    <div class="feature-card">
                         <div class="icon-container"><i class="fas fa-map-marked-alt"></i></div>
                         <h3>Live Tracking</h3>
-                        <p>Stay connected to your shipments in real-time. Monitor its journey at every stage. With SFSS Courier, transparency and peace of mind come standard.</p>
+                        <p>Apni shipment ko real-time mein track karein. Aapko hamesha pata chalega ki aapka parcel kahan hai.</p>
                     </div>
-                    <div class="serving-card">
+                    <div class="feature-card">
                         <div class="icon-container"><i class="fas fa-digital-tachograph"></i></div>
                         <h3>Digital Technology</h3>
-                        <p>We embrace the digital revolution, leveraging state-of-the-art digital technology to streamline logistics processes for efficiency and reliability.</p>
+                        <p>Humari advanced digital technology se hum logistics ko aur bhi fast aur reliable banate hain.</p>
                     </div>
-                    <div class="serving-card">
+                    <div class="feature-card">
                         <div class="icon-container"><i class="fas fa-globe-asia"></i></div>
                         <h3>Pan India Coverage</h3>
-                        <p>Reach every corner of the nation with our extensive network. Your shipments are delivered promptly and securely, no matter where they need to go.</p>
+                        <p>Poore desh mein humari services available hain. Aapki shipment Bharat ke kisi bhi kone mein pahunch sakti hai.</p>
                     </div>
-                    <div class="serving-card">
+                    <div class="feature-card">
                         <div class="icon-container"><i class="fas fa-shield-alt"></i></div>
                         <h3>Transit Insurance</h3>
-                        <p>Protect your shipments with our comprehensive transit insurance options. Your goods are safeguarded against loss or damage during transit.</p>
+                        <p>Humari comprehensive transit insurance se aapki shipments poori tarah surakshit hain.</p>
                     </div>
-                    <div class="serving-card">
+                    <div class="feature-card">
                         <div class="icon-container"><i class="fas fa-box-archive"></i></div>
                         <h3>Packaging Guidance</h3>
-                        <p>We provide guidance for proper packaging techniques. Sturdy packaging is essential to prevent damage during transit, and we're here to help.</p>
+                        <p>Hum aapko behtar packaging ke liye tips dete hain, taki aapka saaman surakshit rahe.</p>
                     </div>
                 </div>
             </div>
@@ -575,65 +549,33 @@
 
         <section id="contact" class="contact-cta">
             <div class="container">
-                <h2 class="section-title" style="color: var(--text-light);">Get a Free Estimate</h2>
-                
+                <h2 class="section-title" style="color: var(--text-light);">Free Estimate Lijiye</h2>
                 <div class="contact-form-section">
-                    <h3>Enter Details & Get Rate Quotation</h3>
+                    <h3>Details Bharein & Rate Quotation Payein</h3>
                     <form onsubmit="event.preventDefault(); validateForm();">
                         <div class="form-group">
                             <label for="source">Source (From City)</label>
-                            <input type="text" id="source" name="source" placeholder="Enter Source City" required>
+                            <input type="text" id="source" name="source" placeholder="Source City daalein" required>
                         </div>
                         <div class="form-group">
                             <label for="destination">Destination (To City)</label>
-                            <input type="text" id="destination" name="destination" placeholder="Enter Destination City" required>
+                            <input type="text" id="destination" name="destination" placeholder="Destination City daalein" required>
                         </div>
                         <div class="form-group">
                             <label for="goods-details">Goods Details</label>
-                            <textarea id="goods-details" name="goods-details" rows="3" placeholder="e.g., Weight, size, item type"></textarea>
+                            <textarea id="goods-details" name="goods-details" rows="3" placeholder="Jaise: Weight, size, item type"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="mobile-number">Mobile Number</label>
-                            <input type="tel" id="mobile-number" name="mobile-number" placeholder="Enter Mobile Number" required>
+                            <input type="tel" id="mobile-number" name="mobile-number" placeholder="Mobile Number daalein" required>
                         </div>
                         <div class="form-group captcha">
                             <label>CAPTCHA: <span id="captcha-question">13 + 0 =</span></label>
-                            <input type="number" id="captcha-answer" name="captcha-answer" placeholder="Enter Answer" required>
+                            <input type="number" id="captcha-answer" name="captcha-answer" placeholder="Jawab daalein" required>
                         </div>
-                        <button type="submit" class="submit-button">Get Free Estimates</button>
+                        <button type="submit" class="submit-button">Free Estimate Paayein</button>
                     </form>
                 </div>
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <div class="container">
-                <div class="cta-cards">
-                    <div class="cta-card">
-                        <div class="number">1</div>
-                        <h4>Call Us for Your Estimate Today!</h4>
-                        <p>Ready to get started? Give us a call now to receive your personalized estimate for your transportation needs.</p>
-                        <a href="tel:+919625913136" class="btn"><i class="fas fa-phone-alt"></i> Call Now</a>
-                    </div>
-                    <div class="cta-card">
-                        <div class="number">2</div>
-                        <h4>Book Your Transport Service Today!</h4>
-                        <p>Ready to move your goods? It's as easy as booking with us! Experience seamless transportation solutions tailored to your needs.</p>
-                        <a href="#contact" class="btn"><i class="fas fa-calendar-check"></i> Book Now</a>
-                    </div>
-                    <div class="cta-card">
-                        <div class="number">3</div>
-                        <h4>Stay Informed, Stay Confident</h4>
-                        <p>Track your shipment effortlessly with our real-time tracking feature. Know exactly where your package is and when it will arrive.</p>
-                        <a href="#" class="btn"><i class="fas fa-search-location"></i> Track Now</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="service-cities">
-            <div class="container" style="text-align: center; padding-bottom: 40px; color: var(--text-dark);">
-                <p><strong>SFSS Courier Goods Transport Service is in:</strong> Indore, Bhopal, Delhi, Noida, Jaipur, Kanpur, Ahmedabad, Nagpur, Bangalore, Chennai.</p>
             </div>
         </section>
     </main>
@@ -642,12 +584,10 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-about">
-                    <!-- SFSS Courier Logo -->
                     <img src="uploaded:SFSS LOGO NEW.jpeg-639eb171-e739-487a-a145-a5c45a5d8ed6" alt="SFSS Courier Logo" class="logo">
-                    <h4 style="margin-top: 20px;">Get in touch</h4>
-                    <p>Ready to streamline your transportation needs? Get in touch with SFSS Courier today! We are here to assist you every step of the way.</p>
+                    <p style="margin-top: 20px;">SFSS Courier, aapka logistics partner. Hum aapki har zarurat mein madad karne ke liye taiyar hain.</p>
                     <p class="contact-link"><i class="fas fa-map-marker-alt"></i> Sector 63A, Noida, Uttar Pradesh, INDIA</p>
-                    <p class="contact-link"><i class="fas fa-phone-alt"></i> Call: <a href="tel:+919625913136">9625913136</a></p>
+                    <p class="contact-link"><i class="fas fa-phone-alt"></i> Call: <a href="tel:+919625913136" onclick="showModal(); return false;">9625913136</a></p>
                     <p class="contact-link"><i class="fas fa-envelope"></i> Email: <a href="mailto:dksdk271@gmail.com">dksdk271@gmail.com</a></p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
@@ -669,32 +609,67 @@
                 <div class="footer-menu">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="#">Part Load Transport</a></li>
-                        <li><a href="#">Parcel and Courier</a></li>
-                        <li><a href="#">Luggage Transport</a></li>
-                        <li><a href="#">Truck Booking</a></li>
+                        <li><a href="#services">Part Load Transport</a></li>
+                        <li><a href="#services">Parcel and Courier</a></li>
+                        <li><a href="#services">Luggage Transport</a></li>
+                        <li><a href="#services">Truck Booking</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>Ship your items, now! Contact us now, get rates and ship your product to over 3000+ cities</p>
-                <p>&copy; 2024 SFSS Courier. All Rights Reserved.</p>
+                <p>Abhi estimate paayein aur apna product 3000+ cities mein ship karein!</p>
+                <p>&copy; 2024 SFSS Courier. Sabhi adhikar surakshit hain.</p>
             </div>
         </div>
     </footer>
 
+    <!-- The Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3>Humein Call Karein</h3>
+            <p>9625913136</p>
+            <a href="tel:+919625913136">Abhi Call Karein</a>
+        </div>
+    </div>
+
     <script>
+        // Function to show the modal
+        function showModal() {
+            const modal = document.getElementById("contactModal");
+            modal.style.display = "flex";
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            const modal = document.getElementById("contactModal");
+            modal.style.display = "none";
+        }
+        
+        // This is the function for the form validation, it is not for the modal.
         function validateForm() {
             const captchaAnswer = document.getElementById('captcha-answer').value;
             const captchaQuestion = document.getElementById('captcha-question').textContent;
-            const expectedAnswer = eval(captchaQuestion);
+            const expectedAnswer = eval(captchaQuestion.replace(/ /g, ''));
             
             if (parseInt(captchaAnswer) === expectedAnswer) {
-                alert('Form Submitted Successfully!');
+                alert('Form safalta-purvak submit ho gaya hai!');
             } else {
-                alert('Incorrect CAPTCHA answer. Please try again.');
+                alert('CAPTCHA ka jawab galat hai. Kripya dobara koshish karein.');
             }
         }
+
+        // Add event listener to the "Call Us" link in the footer to show the modal
+        document.querySelector('footer .contact-link a[href^="tel"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            showModal();
+        });
+        
+        // Isse "Contact Us" link par click karne par modal show hoga.
+        document.querySelector('nav.main-nav a[href="#contact"]').addEventListener('click', function(e) {
+            e.preventDefault(); // Default anchor link behavior ko roke
+            showModal();
+        });
     </script>
 </body>
 </html>
