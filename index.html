@@ -3,20 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SFSS Courier - Professional & Trusted Delivery</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <title>SFSS Courier - Premium Delivery Partner</title>
+    <!-- Google Fonts for a distinct and professional typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for modern icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* CSS Variables for a clean, maintainable style */
         :root {
-            --primary-color: #004d9c; /* Deep Blue */
-            --secondary-color: #ff6f00; /* Bright Orange */
-            --background-light: #f4f7f9;
-            --background-dark: #2c3e50;
-            --text-dark: #333;
-            --text-light: #fff;
+            --primary-color: #2c3e50; /* Dark Charcoal */
+            --secondary-color: #e67e22; /* Vibrant Orange */
+            --accent-color: #3498db; /* Sky Blue */
+            --background-main: #ecf0f1; /* Light Gray */
+            --background-dark: #29323c; /* Darker Charcoal */
+            --text-dark: #34495e;
+            --text-light: #ecf0f1;
             --card-bg: #fff;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
+        /* Universal Styling & Box Model Reset */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -24,10 +31,12 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             line-height: 1.6;
-            background-color: var(--background-light);
+            background-color: var(--background-main);
             color: var(--text-dark);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         .container {
@@ -36,164 +45,422 @@
             padding: 0 20px;
         }
 
+        /* Typography & Headings */
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
         /* Header & Navigation */
         header {
             background-color: var(--card-bg);
             padding: 15px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
-            display: block;
-            width: 180px; /* Thoda bada logo */
-            margin: 0 auto; /* Center logo */
+            height: 50px;
         }
 
-        /* Hero Section */
+        .main-nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 15px;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .nav-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+        }
+        
+        /* Hero Section with a modern, clean look */
         .hero {
-            background-color: var(--primary-color);
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://placehold.co/1920x800/ecf0f1/2c3e50?text=SFSS+Courier') no-repeat center center/cover;
             color: var(--text-light);
             text-align: center;
-            padding: 100px 20px;
+            padding: 150px 20px;
         }
 
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            font-weight: 700;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            letter-spacing: 1.5px;
         }
 
         .hero p {
             font-size: 1.3rem;
-        }
-
-        /* About Us Section */
-        .about-us {
-            padding: 80px 0;
-            background-color: var(--background-light);
-        }
-        
-        .about-us h2, .services h2, .contact h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-            position: relative;
-        }
-
-        .about-us p {
             max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 60px 0;
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .service-card {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        .service-card .icon {
-            font-size: 3rem;
-            color: var(--secondary-color);
-            transition: color 0.3s ease;
-        }
-
-        .service-card:hover .icon {
-            color: var(--primary-color);
-        }
-
-        .service-card h3 {
-            margin-top: 15px;
-            font-size: 1.3rem;
-        }
-
-        /* Contact Section */
-        .contact {
-            background-color: var(--background-dark);
-            color: var(--text-light);
-            padding: 80px 20px;
-            text-align: center;
+            margin: 0 auto 30px;
+            font-family: 'Open Sans', sans-serif;
         }
         
-        .contact-info {
-            font-size: 1.2rem;
-        }
-
-        .contact-info p {
-            margin-bottom: 10px;
-        }
-
-        .contact-info a {
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
             color: var(--text-light);
             text-decoration: none;
-            transition: color 0.3s ease;
-            margin: 0 15px; /* Links ke beech space */
-            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .hero-btn:hover {
+            background-color: #d35400;
+            transform: translateY(-3px);
+        }
+
+        /* About Us Section with a two-column layout */
+        .about {
+            padding: 80px 0;
+            background-color: var(--card-bg);
         }
         
-        .contact-info a:hover {
+        .about-content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text {
+            padding-right: 20px;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* Services Section with a fresh card design */
+        .services, .serving {
+            padding: 80px 0;
+            background-color: var(--background-main);
+        }
+        
+        .service-grid, .serving-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card, .serving-card {
+            background-color: var(--card-bg);
+            padding: 40px 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+        
+        .service-card:hover, .serving-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .service-card .icon-container, .serving-card .icon-container {
+            width: 80px;
+            height: 80px;
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            margin: 0 auto 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .service-card:hover .icon-container, .serving-card:hover .icon-container {
+            background-color: var(--secondary-color);
+            transform: rotateY(360deg);
+        }
+
+        /* Contact & Quote Form Section */
+        .contact-cta {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 80px 0;
+        }
+        
+        .contact-form-section {
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            max-width: 650px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .contact-form-section h3 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            text-align: center;
             color: var(--secondary-color);
         }
         
-        .contact-info i {
-            margin-right: 8px;
+        .contact-form-section form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .form-group input, .form-group textarea {
+            padding: 12px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            background-color: #444;
+            color: var(--text-light);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input::placeholder, .form-group textarea::placeholder {
+            color: #999;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background-color: #555;
+        }
+
+        .form-group.captcha {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .submit-button {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .submit-button:hover {
+            background-color: #d35400;
+        }
+        
+        /* CTA Cards */
+        .cta-section {
+            padding: 60px 0;
+            background-color: var(--background-main);
+        }
+
+        .cta-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .cta-card {
+            background-color: var(--card-bg);
+            color: var(--text-dark);
+            text-align: center;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .cta-card .number {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        .cta-card h4 {
+            font-size: 1.5rem;
+            margin: 15px 0;
+            color: var(--primary-color);
+        }
+
+        .cta-card .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .cta-card .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
         }
 
         /* Footer */
         footer {
             background-color: var(--background-dark);
-            color: #ccc;
-            text-align: center;
-            padding: 20px 0;
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
         }
 
-        /* Media Queries for Responsiveness */
+        .footer-about h4, .footer-menu h4 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .footer-about p, .footer-about .contact-link, .footer-menu li {
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+        
+        .footer-about .contact-link a, .footer-menu ul a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-about .contact-link a:hover, .footer-menu ul a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .footer-menu ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive design for tablets and mobile phones */
+        @media (max-width: 992px) {
+            .about-content-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-text {
+                padding-right: 0;
+                order: 2; /* Image will appear first on mobile */
+            }
+            .about-image {
+                order: 1;
+                margin-bottom: 30px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .main-nav {
+                display: none;
+            }
+        }
+        
         @media (max-width: 768px) {
             .hero {
-                padding: 80px 20px;
+                padding: 100px 20px;
             }
             .hero h1 {
                 font-size: 2.5rem;
             }
-            .hero p {
-                font-size: 1.1rem;
-            }
-            .about-us h2, .services h2, .contact h2 {
+            .section-title {
                 font-size: 2rem;
+                margin-bottom: 30px;
             }
-            .about-us, .services, .contact {
-                padding: 50px 0;
+            .footer-grid {
+                grid-template-columns: 1fr;
             }
-            .service-grid {
-                grid-template-columns: 1fr; /* Stack cards on small screens */
-            }
-            .logo {
-                width: 150px;
+            .contact-form-section {
+                padding: 30px;
             }
         }
     </style>
@@ -201,78 +468,233 @@
 <body>
 
     <header>
-        <div class="container">
-            <img src="SFSS LOGO NEW.jpeg" alt="SFSS Courier Logo" class="logo">
+        <div class="container header-content">
+            <!-- SFSS Courier Logo -->
+            <img src="uploaded:SFSS LOGO NEW.jpeg-639eb171-e739-487a-a145-a5c45a5d8ed6" alt="SFSS Courier Logo" class="logo">
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="#about-us">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#">Tracking</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </header>
 
     <main>
         <section class="hero">
             <div class="container">
-                <h1>Welcome to SFSS Courier</h1>
-                <p>Your trusted delivery partner across India. We deliver with speed and safety.</p>
+                <h1>SFSS Courier Goods Transport Service</h1>
+                <p>Welcome to SFSS Courier, your trusted partner for all your transportation and logistics needs across India. We deliver with speed, safety, and reliability.</p>
+                <a href="#contact" class="hero-btn">Get a Free Estimate</a>
             </div>
         </section>
 
-        <section class="about-us">
-            <div class="container">
-                <h2>About Us</h2>
-                <p>SFSS Courier, also known as Super Fast Safety Service, is dedicated to providing efficient and reliable courier solutions nationwide. With a commitment to speed and safety, we ensure that every parcel, document, and product is handled with the utmost care, from local deliveries to inter-city transport. Our goal is to be your most trusted logistics partner, offering seamless services tailored to your needs.</p>
+        <section id="about-us" class="about">
+            <div class="container about-content-grid">
+                <div class="about-text">
+                    <h2>About SFSS Courier</h2>
+                    <p>At SFSS Courier, we pride ourselves on being more than just a transportation company. We are your strategic partner, dedicated to helping you navigate the complexities of logistics with ease. With years of industry experience and a passion for innovation, we have built a reputation for delivering reliable, cost-effective, and efficient solutions to businesses and individuals alike.</p>
+                    <p>Driven by our passion for logistics and unwavering dedication to our customers, our mission is to provide seamless transportation solutions that empower businesses to thrive. We aim to establish long-lasting partnerships built on trust, transparency, and integrity, while continuously adapting to the evolving needs of our clients and the dynamic landscape of the logistics industry.</p>
+                </div>
+                <div class="about-image">
+                    <img src="uploaded:image_5fa525.jpg-fb9fc5a8-d2fa-4f75-b77a-3bd63615778e" alt="SFSS Courier transport vehicle">
+                </div>
             </div>
         </section>
 
-        <section class="services">
+        <section id="services" class="services">
             <div class="container">
-                <h2>Our Professional Services</h2>
+                <h2 class="section-title">Our Core Services</h2>
                 <div class="service-grid">
                     <div class="service-card">
-                        <span class="icon">🚚</span>
-                        <h3>Local Delivery</h3>
+                        <div class="icon-container"><i class="fas fa-suitcase-rolling"></i></div>
+                        <h3>Luggage Transport</h3>
+                        <p>Discover seamless luggage transport solutions with SFSS Courier. We ensure your belongings reach their destination safely and on time.</p>
                     </div>
                     <div class="service-card">
-                        <span class="icon">⚡</span>
-                        <h3>Same Day Delivery</h3>
+                        <div class="icon-container"><i class="fas fa-box-open"></i></div>
+                        <h3>Part Load Transport</h3>
+                        <p>Experience efficient and cost-effective transportation for your partial loads. We've got you covered for small or partial truckloads across India.</p>
                     </div>
                     <div class="service-card">
-                        <span class="icon">📦</span>
-                        <h3>Inter-City Transport</h3>
+                        <div class="icon-container"><i class="fas fa-truck-ramp-box"></i></div>
+                        <h3>Parcel and Courier Services</h3>
+                        <p>Your trusted partner for all your parcel and courier needs throughout India. Our advanced technology and dedication to excellence ensure precision and efficiency.</p>
                     </div>
                     <div class="service-card">
-                        <span class="icon">🧾</span>
-                        <h3>Document Delivery</h3>
+                        <div class="icon-container"><i class="fas fa-truck-arrow-right"></i></div>
+                        <h3>Full Truck Booking</h3>
+                        <p>Announcing our upcoming Full Truck Booking Service with all India transportation. A new level of convenience, efficiency, and reliability for your logistics.</p>
                     </div>
-                    <div class="service-card">
-                        <span class="icon">🛍️</span>
-                        <h3>E-commerce Parcel Handling</h3>
+                </div>
+            </div>
+        </section>
+        
+        <section class="serving">
+            <div class="container">
+                <h2 class="section-title">Why Choose SFSS Courier?</h2>
+                <div class="serving-grid">
+                    <div class="serving-card">
+                        <div class="icon-container"><i class="fas fa-home"></i></div>
+                        <h3>Door to Door Service</h3>
+                        <p>We handle the entire shipping process, from collection at your doorstep to delivery at the recipient's location. Enjoy the convenience of hassle-free shipping.</p>
                     </div>
-                    <div class="service-card">
-                        <span class="icon">📈</span>
-                        <h3>Bulk Delivery for Shops</h3>
+                    <div class="serving-card">
+                        <div class="icon-container"><i class="fas fa-map-marked-alt"></i></div>
+                        <h3>Live Tracking</h3>
+                        <p>Stay connected to your shipments in real-time. Monitor its journey at every stage. With SFSS Courier, transparency and peace of mind come standard.</p>
+                    </div>
+                    <div class="serving-card">
+                        <div class="icon-container"><i class="fas fa-digital-tachograph"></i></div>
+                        <h3>Digital Technology</h3>
+                        <p>We embrace the digital revolution, leveraging state-of-the-art digital technology to streamline logistics processes for efficiency and reliability.</p>
+                    </div>
+                    <div class="serving-card">
+                        <div class="icon-container"><i class="fas fa-globe-asia"></i></div>
+                        <h3>Pan India Coverage</h3>
+                        <p>Reach every corner of the nation with our extensive network. Your shipments are delivered promptly and securely, no matter where they need to go.</p>
+                    </div>
+                    <div class="serving-card">
+                        <div class="icon-container"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Transit Insurance</h3>
+                        <p>Protect your shipments with our comprehensive transit insurance options. Your goods are safeguarded against loss or damage during transit.</p>
+                    </div>
+                    <div class="serving-card">
+                        <div class="icon-container"><i class="fas fa-box-archive"></i></div>
+                        <h3>Packaging Guidance</h3>
+                        <p>We provide guidance for proper packaging techniques. Sturdy packaging is essential to prevent damage during transit, and we're here to help.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="contact">
+        <section id="contact" class="contact-cta">
             <div class="container">
-                <h2>Get in Touch with Us</h2>
-                <div class="contact-info">
-                    <p><i class="fas fa-map-marker-alt"></i> Address: Sector 63A, Noida, Uttar Pradesh, INDIA</p>
-                    <p>
-                        <a href="tel:+919625913136"><i class="fas fa-phone-alt"></i> Call: 9625913136</a>
-                        <a href="https://wa.me/919625913136" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp: 9625913136</a>
-                    </p>
-                    <p><a href="mailto:dksdk271@gmail.com"><i class="fas fa-envelope"></i> Email: dksdk271@gmail.com</a></p>
+                <h2 class="section-title" style="color: var(--text-light);">Get a Free Estimate</h2>
+                
+                <div class="contact-form-section">
+                    <h3>Enter Details & Get Rate Quotation</h3>
+                    <form onsubmit="event.preventDefault(); validateForm();">
+                        <div class="form-group">
+                            <label for="source">Source (From City)</label>
+                            <input type="text" id="source" name="source" placeholder="Enter Source City" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="destination">Destination (To City)</label>
+                            <input type="text" id="destination" name="destination" placeholder="Enter Destination City" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="goods-details">Goods Details</label>
+                            <textarea id="goods-details" name="goods-details" rows="3" placeholder="e.g., Weight, size, item type"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile-number">Mobile Number</label>
+                            <input type="tel" id="mobile-number" name="mobile-number" placeholder="Enter Mobile Number" required>
+                        </div>
+                        <div class="form-group captcha">
+                            <label>CAPTCHA: <span id="captcha-question">13 + 0 =</span></label>
+                            <input type="number" id="captcha-answer" name="captcha-answer" placeholder="Enter Answer" required>
+                        </div>
+                        <button type="submit" class="submit-button">Get Free Estimates</button>
+                    </form>
                 </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-cards">
+                    <div class="cta-card">
+                        <div class="number">1</div>
+                        <h4>Call Us for Your Estimate Today!</h4>
+                        <p>Ready to get started? Give us a call now to receive your personalized estimate for your transportation needs.</p>
+                        <a href="tel:+919625913136" class="btn"><i class="fas fa-phone-alt"></i> Call Now</a>
+                    </div>
+                    <div class="cta-card">
+                        <div class="number">2</div>
+                        <h4>Book Your Transport Service Today!</h4>
+                        <p>Ready to move your goods? It's as easy as booking with us! Experience seamless transportation solutions tailored to your needs.</p>
+                        <a href="#contact" class="btn"><i class="fas fa-calendar-check"></i> Book Now</a>
+                    </div>
+                    <div class="cta-card">
+                        <div class="number">3</div>
+                        <h4>Stay Informed, Stay Confident</h4>
+                        <p>Track your shipment effortlessly with our real-time tracking feature. Know exactly where your package is and when it will arrive.</p>
+                        <a href="#" class="btn"><i class="fas fa-search-location"></i> Track Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="service-cities">
+            <div class="container" style="text-align: center; padding-bottom: 40px; color: var(--text-dark);">
+                <p><strong>SFSS Courier Goods Transport Service is in:</strong> Indore, Bhopal, Delhi, Noida, Jaipur, Kanpur, Ahmedabad, Nagpur, Bangalore, Chennai.</p>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 SFSS Courier. All Rights Reserved.</p>
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <!-- SFSS Courier Logo -->
+                    <img src="uploaded:SFSS LOGO NEW.jpeg-639eb171-e739-487a-a145-a5c45a5d8ed6" alt="SFSS Courier Logo" class="logo">
+                    <h4 style="margin-top: 20px;">Get in touch</h4>
+                    <p>Ready to streamline your transportation needs? Get in touch with SFSS Courier today! We are here to assist you every step of the way.</p>
+                    <p class="contact-link"><i class="fas fa-map-marker-alt"></i> Sector 63A, Noida, Uttar Pradesh, INDIA</p>
+                    <p class="contact-link"><i class="fas fa-phone-alt"></i> Call: <a href="tel:+919625913136">9625913136</a></p>
+                    <p class="contact-link"><i class="fas fa-envelope"></i> Email: <a href="mailto:dksdk271@gmail.com">dksdk271@gmail.com</a></p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-menu">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#about-us">Home</a></li>
+                        <li><a href="#">Tracking</a></li>
+                        <li><a href="#about-us">About Us</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-menu">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Part Load Transport</a></li>
+                        <li><a href="#">Parcel and Courier</a></li>
+                        <li><a href="#">Luggage Transport</a></li>
+                        <li><a href="#">Truck Booking</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Ship your items, now! Contact us now, get rates and ship your product to over 3000+ cities</p>
+                <p>&copy; 2024 SFSS Courier. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
 
+    <script>
+        function validateForm() {
+            const captchaAnswer = document.getElementById('captcha-answer').value;
+            const captchaQuestion = document.getElementById('captcha-question').textContent;
+            const expectedAnswer = eval(captchaQuestion);
+            
+            if (parseInt(captchaAnswer) === expectedAnswer) {
+                alert('Form Submitted Successfully!');
+            } else {
+                alert('Incorrect CAPTCHA answer. Please try again.');
+            }
+        }
+    </script>
 </body>
 </html>
