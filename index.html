@@ -3,42 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SFSS Courier - Aadhunik Web App</title>
-    <!-- Google Fonts for a clean, professional look -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>SFSS Courier - Premium Delivery Partner</title>
+    <!-- Google Fonts for a distinct and professional typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <!-- Font Awesome for modern icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* CSS Variables for easy customization */
+        /* CSS Variables for a clean, maintainable style */
         :root {
-            --primary-color: #003366; /* Deep Navy Blue */
-            --secondary-color: #FF6F61; /* Coral Red */
-            --text-dark: #333;
-            --text-light: #f4f4f9;
-            --background-light: #f4f4f9;
-            --background-dark: #222;
+            --primary-color: #2c3e50; /* Dark Charcoal */
+            --secondary-color: #e67e22; /* Vibrant Orange */
+            --accent-color: #3498db; /* Sky Blue */
+            --background-main: #ecf0f1; /* Light Gray */
+            --background-dark: #29323c; /* Darker Charcoal */
+            --text-dark: #34495e;
+            --text-light: #ecf0f1;
             --card-bg: #fff;
-            --border-radius: 12px;
-            --box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            --border-radius: 8px;
+            --box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        /* Universal Styling */
+        /* Universal Styling & Box Model Reset */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-        html {
-            scroll-behavior: smooth; /* Smooth scrolling for navigation links */
-        }
-
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             line-height: 1.6;
-            background-color: var(--background-light);
+            background-color: var(--background-main);
             color: var(--text-dark);
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         .container {
@@ -47,13 +45,36 @@
             padding: 0 20px;
         }
 
+        /* Typography & Headings */
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
         /* Header & Navigation */
         header {
             background-color: var(--card-bg);
             padding: 15px 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: fixed;
-            width: 100%;
+            position: sticky;
             top: 0;
             z-index: 1000;
         }
@@ -65,88 +86,100 @@
         }
 
         .logo {
-            height: 60px; /* Logo size thoda bada kiya gaya hai */
+            height: 60px;
         }
 
         .main-nav a {
             color: var(--primary-color);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             padding: 10px 15px;
-            transition: color 0.3s ease, border-bottom 0.3s ease;
-        }
-        
-        .main-nav a:hover, .main-nav a.active {
-            color: var(--secondary-color);
-            border-bottom: 2px solid var(--secondary-color);
+            transition: color 0.3s ease;
         }
 
-        /* Hero Section */
+        .main-nav a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .nav-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+        }
+        
+        /* Hero Section with a modern, clean look */
         .hero {
-            /* Nayi image aur gradient background */
-            background: linear-gradient(to right, rgba(0, 51, 102, 0.9), rgba(255, 111, 97, 0.8)), url('https://storage.googleapis.com/g.co/rp/a1/d5/g.co-rp-a1-d5-8839016259062332766-image.png') no-repeat center center/cover;
-            background-size: cover;
-            background-position: center;
+            /* SFSS Courier truck image for hero background */
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://placehold.co/1920x1080/2c3e50/ecf0f1?text=SFSS+Courier+Truck') no-repeat center center/cover;
             color: var(--text-light);
             text-align: center;
-            padding: 200px 20px;
+            padding: 150px 20px;
         }
 
         .hero h1 {
-            font-size: 3.8rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
-            font-family: 'Playfair Display', serif;
+            letter-spacing: 1.5px;
         }
 
         .hero p {
             font-size: 1.3rem;
             max-width: 800px;
             margin: 0 auto 30px;
+            font-family: 'Open Sans', sans-serif;
         }
         
         .hero-btn {
             display: inline-block;
-            background-color: var(--card-bg);
-            color: var(--primary-color);
+            background-color: var(--secondary-color);
+            color: var(--text-light);
             text-decoration: none;
             padding: 15px 30px;
             border-radius: 50px;
-            font-weight: 700;
+            font-weight: 600;
+            letter-spacing: 1px;
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .hero-btn:hover {
-            background-color: var(--secondary-color);
-            color: var(--text-light);
-            transform: translateY(-5px);
+            background-color: #d35400;
+            transform: translateY(-3px);
         }
 
-        /* Section Styling */
-        section {
-            padding: 100px 0;
+        /* About Us Section with a two-column layout */
+        .about {
+            padding: 80px 0;
+            background-color: var(--card-bg);
         }
         
-        .section-title {
-            text-align: center;
-            font-size: 2.8rem;
-            color: var(--primary-color);
-            margin-bottom: 50px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        /* About Us Section */
-        .about-us-grid {
-            display: flex;
-            align-items: center;
+        .about-content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 40px;
+            align-items: center;
         }
 
         .about-text {
-            flex: 1;
+            padding-right: 20px;
         }
 
-        .about-image {
-            flex: 1;
+        .about-text h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
         }
         
         .about-image img {
@@ -156,86 +189,73 @@
             box-shadow: var(--box-shadow);
         }
         
-        /* Services & Features Section */
-        .services-section, .features-section {
-            background-color: var(--background-light);
+        /* Services Section with a fresh card design */
+        .services, .serving {
+            padding: 80px 0;
+            background-color: var(--background-main);
         }
-
-        .services-grid, .features-grid {
+        
+        .service-grid, .serving-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
         
-        .service-card, .feature-card {
+        .service-card, .serving-card {
             background-color: var(--card-bg);
-            padding: 30px;
+            padding: 40px 25px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             text-align: center;
-            transition: transform 0.3s ease, background-color 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
         }
         
-        .service-card:hover, .feature-card:hover {
-            transform: translateY(-8px);
-            background-color: var(--primary-color);
-            color: var(--text-light);
+        .service-card:hover, .serving-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
         }
 
-        .service-card:hover h3, .feature-card:hover h3 {
-            color: var(--secondary-color);
-        }
-
-        .service-card .icon-container, .feature-card .icon-container {
-            width: 70px;
-            height: 70px;
-            background-color: var(--secondary-color);
+        .service-card .icon-container, .serving-card .icon-container {
+            width: 80px;
+            height: 80px;
+            background-color: var(--accent-color);
             color: var(--text-light);
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             margin: 0 auto 20px;
-        }
-
-        .service-card h3, .feature-card h3 {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            transition: color 0.3s ease;
-        }
-
-        .service-card p, .feature-card p {
-            font-size: 1rem;
-            color: #666;
-            transition: color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
         
-        .service-card:hover p, .feature-card:hover p {
-            color: var(--text-light);
+        .service-card:hover .icon-container, .serving-card:hover .icon-container {
+            background-color: var(--secondary-color);
+            transform: rotateY(360deg);
         }
-        
-        /* Contact & CTA Section */
+
+        /* Contact & Quote Form Section */
         .contact-cta {
-            background-color: var(--background-dark);
+            background-color: var(--primary-color);
             color: var(--text-light);
+            padding: 80px 0;
         }
         
         .contact-form-section {
-            background-color: var(--card-bg);
-            color: var(--text-dark);
+            background-color: var(--background-dark);
+            color: var(--text-light);
             padding: 40px;
             border-radius: var(--border-radius);
             max-width: 650px;
             margin: 0 auto;
-            box-shadow: var(--box-shadow);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
         
         .contact-form-section h3 {
             font-size: 2rem;
             margin-bottom: 25px;
             text-align: center;
-            color: var(--primary-color);
+            color: var(--secondary-color);
         }
         
         .contact-form-section form {
@@ -245,19 +265,31 @@
         }
 
         .form-group label {
-            font-weight: 500;
-            margin-bottom: 5px;
+            font-weight: 600;
+            margin-bottom: 8px;
             display: block;
         }
         
         .form-group input, .form-group textarea {
-            width: 100%;
             padding: 12px;
-            border: 1px solid #ccc;
+            border: 1px solid #555;
             border-radius: 5px;
+            background-color: #444;
+            color: var(--text-light);
             font-size: 1rem;
+            transition: border-color 0.3s ease;
         }
         
+        .form-group input::placeholder, .form-group textarea::placeholder {
+            color: #999;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background-color: #555;
+        }
+
         .form-group.captcha {
             display: flex;
             align-items: center;
@@ -271,14 +303,13 @@
             padding: 15px;
             border-radius: 5px;
             font-size: 1.1rem;
-            font-weight: 700;
+            font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition: background-color 0.3s ease;
         }
         
         .submit-button:hover {
-            background-color: #e65c52;
-            transform: translateY(-2px);
+            background-color: #d35400;
         }
         
         /* Modal Popup Styling */
@@ -363,63 +394,71 @@
             margin-bottom: 40px;
         }
 
-        .footer-about p, .footer-about .contact-link {
+        .footer-about p, .footer-about .contact-link, .footer-menu li {
             color: #ccc;
+            margin-bottom: 10px;
         }
         
-        .footer-about .contact-link a {
-            color: #fff;
-            text-decoration: none;
-        }
-        
-        .footer-menu h4 {
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .footer-menu ul {
-            list-style: none;
-        }
-        
-        .footer-menu ul a {
+        .footer-about .contact-link a, .footer-menu ul a {
             color: #ccc;
             text-decoration: none;
             transition: color 0.3s ease;
         }
         
-        .footer-menu ul a:hover {
+        .footer-about .contact-link a:hover, .footer-menu ul a:hover {
             color: var(--secondary-color);
+        }
+        
+        .footer-menu h4 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .footer-menu ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .social-links {
+            margin-top: 20px;
         }
         
         .social-links a {
             color: #fff;
             font-size: 1.5rem;
             margin-right: 15px;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
         
         .social-links a:hover {
             color: var(--secondary-color);
+            transform: translateY(-2px);
         }
 
         .copyright {
             text-align: center;
             border-top: 1px solid rgba(255,255,255,0.1);
             padding-top: 20px;
+            font-size: 0.9rem;
         }
         
-        /* Responsive design */
+        /* Responsive design for tablets and mobile phones */
         @media (max-width: 992px) {
-            .about-us-grid {
-                flex-direction: column;
+            .about-content-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-text {
+                padding-right: 0;
+                order: 2; /* Image will appear first on mobile */
             }
             .about-image {
-                order: -1;
+                order: 1;
                 margin-bottom: 30px;
             }
             .footer-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
             }
             .main-nav {
                 display: none;
@@ -428,13 +467,20 @@
         
         @media (max-width: 768px) {
             .hero {
-                padding: 150px 20px;
+                padding: 100px 20px;
             }
             .hero h1 {
                 font-size: 2.5rem;
             }
             .section-title {
                 font-size: 2rem;
+                margin-bottom: 30px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-form-section {
+                padding: 30px;
             }
         }
     </style>
@@ -466,17 +512,15 @@
         </section>
 
         <section id="about-us" class="about-us">
-            <div class="container">
-                <h2 class="section-title">Hamare Baare Mein</h2>
-                <div class="about-us-grid">
-                    <div class="about-text">
-                        <p>SFSS Courier, jise Super Fast Safety Service ke naam se bhi jaana jaata hai, ek dynamic aur customer-centric logistics company hai. Humara lakshya poore desh mein behtareen aur bharosemand courier service dena hai.</p>
-                        <p>Humara mission customer ke saath vishwas, parivartan aur imandari ka rishta banana hai. Hum har parcel, document aur saman ko poori savdhani ke saath handle karte hain, chahe woh local delivery ho ya inter-city transport. SFSS Courier ke saath, aapki delivery hamari zimmedari hai.</p>
-                    </div>
-                    <div class="about-image">
-                        <!-- Nayi image lagai gai hai -->
-                        <img src="https://storage.googleapis.com/g.co/rp/a1/d5/g.co-rp-a1-d5-8839016259062332766-image.png" alt="A friendly delivery agent picking up a parcel from a customer.">
-                    </div>
+            <div class="container about-content-grid">
+                <div class="about-text">
+                    <h2>Hamare Baare Mein</h2>
+                    <p>SFSS Courier, jise Super Fast Safety Service ke naam se bhi jaana jaata hai, ek dynamic aur customer-centric logistics company hai. Humara lakshya poore desh mein behtareen aur bharosemand courier service dena hai.</p>
+                    <p>Humara mission customer ke saath vishwas, parivartan aur imandari ka rishta banana hai. Hum har parcel, document aur saman ko poori savdhani ke saath handle karte hain, chahe woh local delivery ho ya inter-city transport. SFSS Courier ke saath, aapki delivery hamari zimmedari hai.</p>
+                </div>
+                <div class="about-image">
+                    <!-- Image of a delivery agent picking up a parcel from a customer. -->
+                    <img src="https://storage.googleapis.com/g.co/rp/a1/d5/g.co-rp-a1-d5-8839016259062332766-image.png" alt="Ek delivery agent customer se parcel lete hue.">
                 </div>
             </div>
         </section>
@@ -673,3 +717,4 @@
     </script>
 </body>
 </html>
+
