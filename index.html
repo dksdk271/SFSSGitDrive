@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SFSS Courier - Premium Delivery Partner</title>
     <!-- Google Fonts for a distinct and professional typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <!-- Font Awesome for modern icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* CSS Variables for a clean, maintainable style */
         :root {
-            --primary-color: #2c3e50; /* Dark Charcoal */
-            --secondary-color: #e67e22; /* Vibrant Orange */
-            --accent-color: #3498db; /* Sky Blue */
-            --background-main: #ecf0f1; /* Light Gray */
-            --background-dark: #29323c; /* Darker Charcoal */
-            --text-dark: #34495e;
-            --text-light: #ecf0f1;
+            --primary-color: #2b3947; /* Dark Slate Blue */
+            --secondary-color: #d8452e; /* Vibrant Red-Orange */
+            --accent-color: #4CAF50; /* A soothing Green */
+            --background-main: #f0f2f5; /* Very Light Gray */
+            --background-dark: #222d38; /* Darker Slate */
+            --text-dark: #333;
+            --text-light: #f0f2f5;
             --card-bg: #fff;
-            --border-radius: 8px;
-            --box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
         /* Universal Styling & Box Model Reset */
@@ -53,7 +53,7 @@
         
         .section-title {
             text-align: center;
-            font-size: 2.8rem;
+            font-size: 3rem;
             color: var(--primary-color);
             margin-bottom: 50px;
             position: relative;
@@ -62,21 +62,22 @@
         .section-title::after {
             content: '';
             display: block;
-            width: 80px;
-            height: 4px;
+            width: 100px;
+            height: 5px;
             background-color: var(--secondary-color);
-            margin: 10px auto 0;
-            border-radius: 2px;
+            margin: 15px auto 0;
+            border-radius: 3px;
         }
 
         /* Header & Navigation */
         header {
             background-color: var(--card-bg);
             padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
+            transition: background-color 0.3s ease;
         }
 
         .header-content {
@@ -84,9 +85,10 @@
             justify-content: space-between;
             align-items: center;
         }
-
+        
         .logo {
             height: 60px;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .main-nav a {
@@ -94,45 +96,37 @@
             text-decoration: none;
             font-weight: 600;
             padding: 10px 15px;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
+            position: relative;
         }
 
         .main-nav a:hover {
             color: var(--secondary-color);
+            transform: translateY(-2px);
         }
-        
-        .nav-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: var(--primary-color);
-        }
-        
-        .nav-list {
-            display: flex;
-            list-style: none;
-        }
-        
-        /* Hero Section with a modern, clean look */
+
+        /* Hero Section with a new, stylized background */
         .hero {
-            /* SFSS Courier truck image for hero background */
-            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://placehold.co/1920x1080/2c3e50/ecf0f1?text=SFSS+Courier+Truck') no-repeat center center/cover;
+            background: linear-gradient(rgba(43, 57, 71, 0.85), rgba(43, 57, 71, 0.85)), url('https://placehold.co/1920x1080/2b3947/f0f2f5?text=SFSS+Courier+Truck') no-repeat center center/cover;
             color: var(--text-light);
             text-align: center;
-            padding: 150px 20px;
+            padding: 180px 20px;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             margin-bottom: 20px;
-            letter-spacing: 1.5px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 2px;
+            animation: slideInDown 1s ease-in-out;
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             max-width: 800px;
-            margin: 0 auto 30px;
+            margin: 0 auto 40px;
             font-family: 'Open Sans', sans-serif;
+            animation: fadeIn 2s ease-in-out;
         }
         
         .hero-btn {
@@ -140,46 +134,38 @@
             background-color: var(--secondary-color);
             color: var(--text-light);
             text-decoration: none;
-            padding: 15px 30px;
+            padding: 18px 40px;
             border-radius: 50px;
             font-weight: 600;
-            letter-spacing: 1px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(216,69,46,0.4);
         }
 
         .hero-btn:hover {
-            background-color: #d35400;
-            transform: translateY(-3px);
+            background-color: #c43e2c;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(216,69,46,0.6);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 100px 0;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         /* About Us Section with a two-column layout */
-        .about {
-            padding: 80px 0;
-            background-color: var(--card-bg);
-        }
-        
-        .about-content-grid {
+        .about-us-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 60px;
             align-items: center;
         }
-
-        .about-text {
-            padding-right: 20px;
-        }
-
-        .about-text h2 {
-            font-size: 2.2rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        .about-text p {
-            font-size: 1.1rem;
-            color: #555;
-            line-height: 1.8;
-            margin-bottom: 20px;
+        
+        .about-image {
+            position: relative;
+            animation: slideInLeft 1s ease-in-out;
         }
         
         .about-image img {
@@ -187,35 +173,39 @@
             height: auto;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
+            transition: transform 0.3s ease;
         }
         
-        /* Services Section with a fresh card design */
-        .services, .serving {
-            padding: 80px 0;
+        .about-image img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Services & Features Section */
+        .services-section, .features-section {
             background-color: var(--background-main);
         }
-        
-        .service-grid, .serving-grid {
+
+        .services-grid, .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
         
-        .service-card, .serving-card {
+        .service-card, .feature-card {
             background-color: var(--card-bg);
-            padding: 40px 25px;
+            padding: 40px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
-        .service-card:hover, .serving-card:hover {
+        .service-card:hover, .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
         }
 
-        .service-card .icon-container, .serving-card .icon-container {
+        .service-card .icon-container, .feature-card .icon-container {
             width: 80px;
             height: 80px;
             background-color: var(--accent-color);
@@ -224,36 +214,43 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 2.5rem;
-            margin: 0 auto 20px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        
-        .service-card:hover .icon-container, .serving-card:hover .icon-container {
-            background-color: var(--secondary-color);
-            transform: rotateY(360deg);
+            font-size: 2.8rem;
+            margin: 0 auto 25px;
+            animation: rotateIn 1.5s ease-in-out;
         }
 
+        .service-card h3, .feature-card h3 {
+            font-size: 1.6rem;
+            color: var(--primary-color);
+        }
+
+        .service-card p, .feature-card p {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 10px;
+        }
+        
         /* Contact & Quote Form Section */
         .contact-cta {
-            background-color: var(--primary-color);
+            background-color: var(--background-dark);
             color: var(--text-light);
-            padding: 80px 0;
+            padding: 100px 0;
         }
         
         .contact-form-section {
             background-color: var(--background-dark);
             color: var(--text-light);
-            padding: 40px;
+            padding: 50px;
             border-radius: var(--border-radius);
-            max-width: 650px;
+            max-width: 700px;
             margin: 0 auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
         }
         
         .contact-form-section h3 {
-            font-size: 2rem;
-            margin-bottom: 25px;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
             text-align: center;
             color: var(--secondary-color);
         }
@@ -261,20 +258,21 @@
         .contact-form-section form {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 25px;
         }
 
         .form-group label {
             font-weight: 600;
             margin-bottom: 8px;
             display: block;
+            color: var(--text-light);
         }
         
         .form-group input, .form-group textarea {
-            padding: 12px;
+            padding: 15px;
             border: 1px solid #555;
-            border-radius: 5px;
-            background-color: #444;
+            border-radius: 8px;
+            background-color: #334251;
             color: var(--text-light);
             font-size: 1rem;
             transition: border-color 0.3s ease;
@@ -287,29 +285,30 @@
         .form-group input:focus, .form-group textarea:focus {
             outline: none;
             border-color: var(--accent-color);
-            background-color: #555;
+            background-color: #405469;
         }
 
         .form-group.captcha {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
         }
         
         .submit-button {
             background-color: var(--secondary-color);
             color: var(--text-light);
             border: none;
-            padding: 15px;
-            border-radius: 5px;
-            font-size: 1.1rem;
+            padding: 18px;
+            border-radius: 8px;
+            font-size: 1.2rem;
             font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
         
         .submit-button:hover {
-            background-color: #d35400;
+            background-color: #c43e2c;
+            transform: translateY(-3px);
         }
         
         /* Modal Popup Styling */
@@ -444,10 +443,29 @@
             font-size: 0.9rem;
         }
         
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideInDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes rotateIn {
+            from { transform: rotateY(90deg) scale(0); opacity: 0; }
+            to { transform: rotateY(0) scale(1); opacity: 1; }
+        }
+
         /* Responsive design for tablets and mobile phones */
         @media (max-width: 992px) {
             .about-content-grid {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
             .about-text {
                 padding-right: 0;
@@ -467,13 +485,16 @@
         
         @media (max-width: 768px) {
             .hero {
-                padding: 100px 20px;
+                padding: 120px 20px;
             }
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
             }
             .section-title {
-                font-size: 2rem;
+                font-size: 2.2rem;
                 margin-bottom: 30px;
             }
             .footer-grid {
@@ -718,3 +739,4 @@
 </body>
 </html>
 
+                  
