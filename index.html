@@ -1,106 +1,788 @@
-:root {
-    --primary-color: #2b3947;
-    --secondary-color: #d8452e;
-    --accent-color: #4CAF50;
-    --background-main: #f0f2f5;
-    --background-dark: #222d38;
-    --text-dark: #333;
-    --text-light: #f0f2f5;
-    --card-bg: #fff;
-    --border-radius: 12px;
-    --box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SFSS Courier - Premium Delivery Partner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* CSS Variables for a clean, maintainable style */
+        :root {
+            --primary-color: #2b3947; /* Dark Slate Blue */
+            --secondary-color: #d8452e; /* Vibrant Red-Orange */
+            --accent-color: #4CAF50; /* A soothing Green */
+            --background-main: #f0f2f5; /* Very Light Gray */
+            --background-dark: #222d38; /* Darker Slate */
+            --text-dark: #333;
+            --text-light: #f0f2f5;
+            --card-bg: #fff;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
 
-* { box-sizing: border-box; margin:0; padding:0; }
-body { font-family: 'Open Sans', sans-serif; color: var(--text-dark); background-color: var(--background-main); line-height:1.6; }
-.container { width:90%; max-width:1200px; margin:0 auto; }
-.flex-center { display:flex; justify-content:center; align-items:center; }
-.section-title { text-align:center; font-size:3rem; color:var(--primary-color); margin-bottom:50px; position:relative; }
-.section-title::after { content:''; display:block; width:100px; height:5px; background-color:var(--secondary-color); margin:15px auto 0; border-radius:3px; }
-header { background-color:var(--card-bg); padding:15px 0; box-shadow:0 2px 15px rgba(0,0,0,0.1); position:sticky; top:0; z-index:1000; transition:background-color 0.3s ease; }
-.header-content { display:flex; justify-content:space-between; align-items:center; }
-.logo { height:70px; width:auto; }
-.main-nav a { color:var(--primary-color); text-decoration:none; font-weight:600; padding:10px 15px; transition:color 0.3s ease, transform 0.3s ease; position:relative; }
-.main-nav a:hover { color:var(--secondary-color); transform:translateY(-2px); }
-.hero { background: linear-gradient(rgba(43, 57, 71, 0.85), rgba(43, 57, 71, 0.85)), url('https://placehold.co/1920x1080/2b3947/f0f2f5?text=SFSS+Courier+Truck') no-repeat center center/cover; color: var(--text-light); text-align:center; padding:180px 20px; }
-.hero h1 { font-size:4rem; margin-bottom:20px; font-family:'Playfair Display', serif; letter-spacing:2px; }
-.hero p { font-size:1.4rem; max-width:800px; margin:0 auto 40px; }
-.hero-btn { background-color:var(--secondary-color); color:var(--text-light); text-decoration:none; padding:18px 40px; border-radius:50px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; }
-.hero-btn:hover { background-color:#c43e2c; }
+        /* Universal Styling & Box Model Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-section { padding:100px 0; }
-.about-us-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
-.about-image img { width:100%; height:auto; border-radius:var(--border-radius); box-shadow:var(--box-shadow); }
-.services-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:30px; }
-.service-card { background-color:var(--card-bg); padding:40px; border-radius:var(--border-radius); box-shadow:var(--box-shadow); text-align:center; transition:transform 0.3s ease, box-shadow 0.3s ease; }
-.service-card:hover { transform:translateY(-10px); box-shadow:0 15px 35px rgba(0,0,0,0.15); }
-.service-card .icon-container { width:80px; height:80px; background-color:var(--accent-color); color:var(--text-light); border-radius:50%; margin:0 auto 25px; display:flex; justify-content:center; align-items:center; font-size:2.8rem; }
-.service-card h3 { font-size:1.6rem; color:var(--primary-color); }
-.service-card p { font-size:1rem; color:#666; margin-top:10px; }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--background-main);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.contact-form-section { background-color:var(--background-dark); color:var(--text-light); padding:50px; border-radius:var(--border-radius); max-width:700px; margin:0 auto; box-shadow:0 15px 40px rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); }
-.contact-form-section h3 { font-size:2.2rem; margin-bottom:30px; text-align:center; color:var(--secondary-color); }
-.contact-form-section form { display:flex; flex-direction:column; gap:25px; }
-.form-group label { font-weight:600; margin-bottom:8px; display:block; color:var(--text-light); }
-.form-group input, .form-group textarea { padding:15px; border:1px solid #555; border-radius:8px; background-color:#334251; color:var(--text-light); font-size:1rem; width:100%; }
-.form-group textarea { resize:vertical; min-height:120px; }
-.form-group input:focus, .form-group textarea:focus { outline:none; border-color:var(--accent-color); background-color:#405469; }
-.submit-button { background-color:var(--secondary-color); color:var(--text-light); border:none; padding:18px; border-radius:8px; font-size:1.2rem; font-weight:600; cursor:pointer; }
-.submit-button:hover { background-color:#c43e2c; }
+        /* Utility Class for Layout */
+        .flex-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-footer { background-color:var(--background-dark); color:var(--text-light); padding:50px 0 20px; text-align:center; }
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 50px;
+            position: relative;
+        }
 
-.modal { display:none; position:fixed; z-index:3000; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); justify-content:center; align-items:center; }
-.calculator-content { background:#1c2b36; padding:30px; border-radius:12px; width:450px; max-width:90%; box-shadow:0 10px 25px rgba(0,0,0,0.5); color:#f0f2f5; position:relative; }
-.calculator-content h2 { text-align:center; color:var(--secondary-color); margin-bottom:20px; }
-.calculator-content input { width:100%; padding:10px; margin-top:5px; border-radius:6px; border:1px solid #334251; background:#0f1a24; color:#fff; font-size:16px; margin-bottom:5px; }
-.calculator-content button { margin-top:25px; width:100%; padding:12px; background:var(--secondary-color); border:none; border-radius:6px; color:var(--text-light); font-size:18px; cursor:pointer; }
-.calculator-content button:hover { background:#c43e2c; }
-.result { margin-top:20px; padding:15px; background:#263845; border-radius:8px; text-align:left; font-size:1.1rem; }
-.close-btn-calc { color:#fff; float:right; font-size:36px; font-weight:bold; position:absolute; top:10px; right:20px; cursor:pointer; }
-.close-btn-calc:hover { color:var(--secondary-color); }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 5px;
+            background-color: var(--secondary-color);
+            margin: 15px auto 0;
+            border-radius: 3px;
+        }
 
-@media(max-width:992px){.about-us-grid{grid-template-columns:1fr; gap:30px;}.about-text{text-align:center;}.main-nav{display:none;}}
-@media(max-width:768px){.hero{padding:120px 20px;}.hero h1{font-size:2.8rem;}.hero p{font-size:1.2rem;}.section-title{font-size:2.2rem;margin-bottom:30px;}}
-// Open/Close Modal
-const modal = document.getElementById('rate-calculator-modal');
-const openBtn = document.getElementById('open-calculator-btn');
-const closeBtn = document.querySelector('.close-btn-calc');
+        /* Header & Navigation */
+        header {
+            background-color: var(--card-bg);
+            padding: 15px 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
 
-openBtn.addEventListener('click', () => { modal.style.display = 'flex'; });
-closeBtn.addEventListener('click', () => { modal.style.display = 'none'; });
-window.addEventListener('click', (e) => { if(e.target === modal){ modal.style.display='none'; } });
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            /* Logo Styling */
+            height: 70px; 
+            width: auto;
+            animation: fadeIn 1s ease-in-out;
+        }
 
-// Rate Calculator Function
-function calculateRate() {
-    const fromPin = document.getElementById('fromPin').value;
-    const toPin = document.getElementById('toPin').value;
-    const weight = parseFloat(document.getElementById('weight').value);
-    const length = parseFloat(document.getElementById('length').value) || 0;
-    const width = parseFloat(document.getElementById('width').value) || 0;
-    const height = parseFloat(document.getElementById('height').value) || 0;
+        .main-nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 15px;
+            transition: color 0.3s ease, transform 0.3s ease;
+            position: relative;
+        }
 
-    if(!fromPin || !toPin || !weight) {
-        alert('Please fill all required fields.');
-        return;
-    }
+        .main-nav a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
 
-    // Simple Rate Logic (Example)
-    let volumetricWeight = (length * width * height) / 5000;
-    let chargeableWeight = Math.max(weight, volumetricWeight);
-    let rate = chargeableWeight * 50; // ₹50 per kg
+        /* Hero Section with a new, stylized background */
+        .hero {
+            background: linear-gradient(rgba(43, 57, 71, 0.85), rgba(43, 57, 71, 0.85)), url('https://placehold.co/1920x1080/2b3947/f0f2f5?text=SFSS+Courier+Truck') no-repeat center center/cover;
+            color: var(--text-light);
+            text-align: center;
+            padding: 180px 20px;
+        }
 
-    document.getElementById('result').innerHTML = `
-        <strong>From:</strong> ${fromPin} <br>
-        <strong>To:</strong> ${toPin} <br>
-        <strong>Weight:</strong> ${chargeableWeight.toFixed(2)} kg <br>
-        <strong>Estimated Rate:</strong> ₹${rate.toFixed(2)}
-    `;
-}
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 2px;
+            animation: slideInDown 1s ease-in-out;
+        }
 
-// Quote Form Submission (Demo)
-document.getElementById('quote-form').addEventListener('submit', function(e){
-    e.preventDefault();
-    alert('Thank you! Your quote request has been submitted.');
-    this.reset();
-});
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-family: 'Open Sans', sans-serif;
+            animation: fadeIn 2s ease-in-out;
+        }
+        
+        .hero-btn {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(216,69,46,0.4);
+        }
+
+        .hero-btn:hover {
+            background-color: #c43e2c;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(216,69,46,0.6);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 100px 0;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* About Us Section with a two-column layout */
+        .about-us-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-image {
+            position: relative;
+            animation: slideInLeft 1s ease-in-out;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .about-image img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Services & Features Section */
+        .services-section, .features-section {
+            background-color: var(--background-main);
+        }
+        
+        .services-grid, .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card, .feature-card {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover, .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .service-card .icon-container, .feature-card .icon-container {
+            width: 80px;
+            height: 80px;
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            border-radius: 50%;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.8rem;
+            margin: 0 auto 25px;
+            animation: rotateIn 1.5s ease-in-out;
+        }
+
+        .service-card h3, .feature-card h3 {
+            font-size: 1.6rem;
+            color: var(--primary-color);
+        }
+
+        .service-card p, .feature-card p {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 10px;
+        }
+        
+        /* Contact & Quote Form Section */
+        .contact-cta {
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            padding: 100px 0;
+        }
+        
+        .contact-form-section {
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            padding: 50px;
+            border-radius: var(--border-radius);
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .contact-form-section h3 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: var(--secondary-color);
+        }
+
+        .contact-form-section form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+            color: var(--text-light);
+        }
+        
+        .form-group input, .form-group textarea {
+            padding: 15px;
+            border: 1px solid #555;
+            border-radius: 8px;
+            background-color: #334251;
+            color: var(--text-light);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            width: 100%;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background-color: #405469;
+        }
+
+        .form-group.captcha {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .submit-button {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            border: none;
+            padding: 18px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .submit-button:hover {
+            background-color: #c43e2c;
+            transform: translateY(-3px);
+        }
+        
+        /* Modal Popup Styling */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            text-align: center;
+            animation: slideInDown 0.5s;
+        }
+
+        .modal-content h4 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideInDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes rotateIn {
+            from { transform: rotateY(90deg) scale(0); opacity: 0; }
+            to { transform: rotateY(0) scale(1); opacity: 1; }
+        }
+
+        /* Responsive design for tablets and mobile phones */
+        @media (max-width: 992px) {
+            .about-us-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .about-text {
+                padding-right: 0;
+                text-align: center;
+            }
+            .main-nav {
+                /* For a real website, this would be managed by a hamburger menu toggle */
+                display: none; 
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 120px 20px;
+            }
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+            .section-title {
+                font-size: 2.2rem;
+                margin-bottom: 30px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        /* Calculator Specific Styles for Modal */
+        #rate-calculator-modal {
+            display: none; 
+            position: fixed;
+            z-index: 3000; 
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+        }
+        .calculator-content {
+            background: #1c2b36;
+            padding: 30px;
+            border-radius: 12px;
+            width: 450px;
+            max-width: 90%;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            color: #f0f2f5;
+            position: relative;
+        }
+        .form-box {
+            background: none;
+            padding: 0;
+            width: 100%;
+        }
+        .calculator-content h2 {
+            text-align: center;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        .calculator-content label {
+            display: block;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+        .calculator-content input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #334251;
+            background: #0f1a24;
+            color: #fff;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        .calculator-content button {
+            margin-top: 25px;
+            width: 100%;
+            padding: 12px;
+            background: var(--secondary-color);
+            border: none;
+            border-radius: 6px;
+            color: var(--text-light);
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .calculator-content button:hover {
+            background: #c43e2c;
+            transform: translateY(-2px);
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #263845;
+            border-radius: 8px;
+            text-align: left;
+            font-size: 1.1rem;
+        }
+        .result hr {
+            border: 0;
+            height: 1px;
+            background: #334251;
+            margin: 10px 0;
+        }
+        .close-btn-calc {
+            color: #fff;
+            float: right;
+            font-size: 36px;
+            font-weight: bold;
+            transition: color 0.3s;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            cursor: pointer;
+        }
+        .close-btn-calc:hover {
+            color: var(--secondary-color);
+        }
+    </style>
+    </head>
+<body>
+    <div id="rate-calculator-modal" class="modal flex-center">
+        <div class="calculator-content">
+            <span class="close-btn-calc">&times;</span>
+            <div class="form-box">
+                <h2>SFSS Courier Rate Calculator</h2>
+
+                <label for="fromPin">From Pincode</label>
+                <input type="text" id="fromPin" placeholder="Enter source pincode">
+
+                <label for="toPin">To Pincode</label>
+                <input type="text" id="toPin" placeholder="Enter destination pincode">
+
+                <label for="weight">Actual Weight (kg)</label>
+                <input type="number" id="weight" placeholder="Enter weight in kg" min="0.1" step="0.1">
+
+                <label>Box Size (cm) - Optional</label>
+                <input type="number" id="length" placeholder="Length" min="0" step="0.1">
+                <input type="number" id="width" placeholder="Width">
+                <input type="number" id="height" placeholder="Height">
+
+                <button onclick="calculateRate()">Calculate</button>
+
+                <div class="result" id="result">Enter details to see result</div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="container header-content">
+            <img src="SFSS LOGO NEW.jpeg" alt="SFSS Courier Logo" class="logo">
+            <nav class="main-nav">
+                <a href="#hero">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#" id="open-calculator-btn">Rate Calculator</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="hero">
+            <div class="container">
+                <h1>Fast, Secure, and Reliable Deliveries</h1>
+                <p>Your trusted premium delivery partner, connecting businesses and individuals across the globe with speed and precision.</p>
+                <a href="#contact" class="hero-btn">Get a Quick Quote</a>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="container">
+                <h2 class="section-title">Who We Are</h2>
+                <div class="about-us-grid">
+                    <div class="about-text">
+                        <h3>Delivering Trust, One Parcel at a Time</h3>
+                        <p>SFSS Courier has been at the forefront of the logistics industry for over two decades. Our mission is to provide unparalleled service through a commitment to speed, security, and customer satisfaction.</p>
+                        <p>We leverage cutting-edge technology to streamline every step of the delivery process, from automated tracking to optimized routing, ensuring your packages arrive on time, every time. Trust SFSS to handle your most critical shipments with the care they deserve.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://placehold.co/550x350/2b3947/f0f2f5?text=Logistics+Warehouse" alt="Logistics Warehouse">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section" id="services">
+            <div class="container">
+                <h2 class="section-title">Our Premium Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="icon-container"><i class="fas fa-plane"></i></div>
+                        <h3>Global Air Freight</h3>
+                        <p>Rapid, reliable worldwide express shipping for time-sensitive cargo and urgent documentation.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon-container"><i class="fas fa-truck-moving"></i></div>
+                        <h3>Ground Logistics</h3>
+                        <p>Extensive network for domestic deliveries, offering cost-effective and dependable transport.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon-container"><i class="fas fa-box-open"></i></div>
+                        <h3>Warehousing & Storage</h3>
+                        <p>Secure, climate-controlled facilities for short and long-term storage solutions.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon-container"><i class="fas fa-satellite-dish"></i></div>
+                        <h3>Real-Time Tracking</h3>
+                        <p>Advanced tracking systems allow you to monitor your shipment's progress 24/7 from dispatch to delivery.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-cta" id="contact">
+            <div class="container">
+                <div class="contact-form-section">
+                    <h3>Get Your Instant Shipping Quote</h3>
+                    <form id="quote-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="origin">Origin Pincode</label>
+                            <input type="text" id="origin" name="origin" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="destination">Destination Pincode</label>
+                            <input type="text" id="destination" name="destination" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="details">Shipment Details (Weight, Dimensions, etc.)</label>
+                            <textarea id="details" name="details" required></textarea>
+                        </div>
+                        <div class="form-group captcha">
+                            <label>Solve: 5 + 7 = ?</label>
+                            <input type="text" id="captcha" name="captcha" style="width: 80px;">
+                        </div>
+                        <button type="submit" class="submit-button">Request Quote</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <img src="SFSS LOGO NEW.jpeg" alt="SFSS Courier Logo" class="logo" style="height: 60px; margin-bottom: 10px;">
+                    <p>Dedicated to excellence in logistics and delivery solutions.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#" id="footer-calculator-btn">Rate Calculator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact Info</h4>
+                    <p>123 Global Logistics Hub, City, Country</p>
+                    <p>Email: info@sfsscourier.com</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 SFSS Courier. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <div id="quoteModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h4>Quote Request Received!</h4>
+            <p>Thank you for reaching out. We have received your request and a representative will be in touch shortly with your custom quote.</p>
+        </div>
+    </div>
+
+    <script>
+        // Modal logic (Quote Form)
+        var modal = document.getElementById("quoteModal");
+        var span = document.getElementsByClassName("close-btn")[0];
+        var form = document.getElementById("quote-form");
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Simple client-side captcha validation (5 + 7 = 12)
+            const captchaInput = document.getElementById('captcha').value.trim();
+            if (captchaInput !== '12') {
+                alert('Incorrect Captcha. Please try again.');
+                return;
+            }
+
+            modal.style.display = "block";
+            form.reset();
+        });
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Calculator Modal Logic
+        const calculatorModal = document.getElementById("rate-calculator-modal");
+        const openBtnNav = document.getElementById("open-calculator-btn");
+        const openBtnFooter = document.getElementById("footer-calculator-btn");
+        const closeBtnCalc = document.querySelector(".close-btn-calc");
+
+        // Open/Close handlers
+        openBtnNav.onclick = (e) => { e.preventDefault(); calculatorModal.style.display = "flex"; };
+        openBtnFooter.onclick = (e) => { e.preventDefault(); calculatorModal.style.display = "flex"; };
+        closeBtnCalc.onclick = () => { calculatorModal.style.display = "none"; };
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+            if (event.target == calculatorModal) {
+                calculatorModal.style.display = "none";
+            }
+        }
+
+        /**
+         * Calculator Function
+         * NOTE: This function provides an ESTIMATED rate as it cannot use a live API key.
+         * For production use, please integrate a real Distance Matrix API (like Google Maps) here.
+         */
+        function calculateRate() {
+            const fromPin = document.getElementById("fromPin").value.trim();
+            const toPin = document.getElementById("toPin").value.trim();
+            const actualWeight = parseFloat(document.getElementById("weight").value);
+            const length = parseFloat(document.getElementById("length").value);
+            const width = parseFloat(document.getElementById("width").value);
+            const height = parseFloat(document.getElementById("height").value);
+            let resultBox = document.getElementById("result");
+            resultBox.innerHTML = "Calculating..."; 
+
+            if (!fromPin || !toPin || isNaN(actualWeight) || actualWeight <= 0) {
+                resultBox.innerHTML = "Please enter valid pincode and weight!";
+                return;
+            }
+
+            // Calculate Volumetric Weight: (L * W * H) / 5000 (standard IATA factor)
+            let volumetricWeight = 0;
+            if (!isNaN(length) && !isNaN(width) && !isNaN(height) && length > 0 && width > 0 && height > 0) {
+                volumetricWeight = (length * width * height) / 5000;
+            }
+            let finalWeight = Math.max(actualWeight, volumetricWeight);
+
+            // --- Simplified Fallback Logic (Mock calculation for demonstration) ---
+            let distance_category;
+            let rate = 0;
+            
+            // Simulating distance check using pincode length difference 
+            let pinDifference = Math.abs(parseInt(fromPin.substring(0, 3)) - parseInt(toPin.substring(0, 3)));
+            
+            if (pinDifference < 20) { 
+                distance_category = "Local/City (approx 1-500 km)";
+                rate = 25; 
+            } else if (pinDifference >= 20 && pinDifference < 50) { 
+                distance_category = "Regional (approx 500-1500 km)";
+                rate = 38; 
+            } else { 
+                distance_category = "National (approx 1500+ km)";
+                rate = 100; 
+            }
+
+            let total = rate * finalWeight;
+            
+            resultBox.innerHTML = `
+                <div style="text-align: center; margin-bottom: 10px; color: yellow;">
+                    *** Showing Estimated Rate (No Live API) ***
+                </div>
+                **Service Category: <b>${distance_category}</b>**<br>
+                Actual Weight: <b>${actualWeight.toFixed(2)} kg</b><br>
+                ${volumetricWeight > 0 ? `Volumetric Weight: <b>${volumetricWeight.toFixed(2)} kg</b><br>` : ''}
+                <hr>
+                Charged Weight: <b>${finalWeight.toFixed(2)} kg</b><br>
+                Rate (per kg): <b>₹${rate}</b><br>
+                <hr>
+                Total Estimated Cost: <b>₹${total.toFixed(2)}</b>
+            `;
+            // --- End of Simplified Fallback Logic ---
+        }
+    </script>
+    </body>
+</html>
