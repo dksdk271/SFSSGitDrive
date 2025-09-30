@@ -658,9 +658,9 @@
                 </div>
                 <div>
                     <h4>Contact Info</h4>
-                    <p>SFSS Courier Company</p>
-                    <p>Email: dksdk271@gmail.com</p>
-                    <p>Whatsapp Phone:9627051087</p>
+                    <p>123 Global Logistics Hub, City, Country</p>
+                    <p>Email: info@sfsscourier.com</p>
+                    <p>Phone: +1 (555) 123-4567</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -673,7 +673,7 @@
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h4>Quote Request Received!</h4>
-            <p>Thank you for reaching out. We have received your request and a representative will be in touch shortly with your custom quote.</p>
+            <p>Thank you for reaching out. We have received your request. We will contact you soon via **Email/WhatsApp**.</p>
         </div>
     </div>
 
@@ -686,20 +686,47 @@
         form.addEventListener('submit', function(event) {
             event.preventDefault();
             
-            // Simple client-side captcha validation (5 + 7 = 12)
+            // Captcha check
             const captchaInput = document.getElementById('captcha').value.trim();
             if (captchaInput !== '12') {
                 alert('Incorrect Captcha. Please try again.');
                 return;
             }
 
+            // Collect form data
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let origin = document.getElementById("origin").value.trim();
+            let destination = document.getElementById("destination").value.trim();
+            let details = document.getElementById("details").value.trim();
+
+            // 1. WhatsApp redirect to 9627051087
+            // NOTE: The user's phone must have WhatsApp installed to work.
+            let whatsappMsg = `New Quote Request:%0AName: ${name}%0AEmail: ${email}%0AOrigin: ${origin}%0ADestination: ${destination}%0ADetails: ${details}`;
+            window.open(`https://wa.me/919627051087?text=${whatsappMsg}`, "_blank");
+
+            // 2. Email send via Formspree (Sends to the email linked with this Formspree ID)
+            // NOTE: You must verify this Formspree endpoint (mnqekbqd) in your email once for it to start working.
+            fetch("https://formspree.io/f/mnqekbqd", { 
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ 
+                    'Full Name': name, // Field names can be set here
+                    'Email Address': email,
+                    'Origin Pincode': origin,
+                    'Destination Pincode': destination,
+                    'Shipment Details': details 
+                })
+            });
+
+            // Show success modal and reset form
             modal.style.display = "block";
             form.reset();
         });
 
         span.onclick = function() {
             modal.style.display = "none";
-        }
+        };
 
         // Calculator Modal Logic
         const calculatorModal = document.getElementById("rate-calculator-modal");
@@ -707,25 +734,16 @@
         const openBtnFooter = document.getElementById("footer-calculator-btn");
         const closeBtnCalc = document.querySelector(".close-btn-calc");
 
-        // Open/Close handlers
         openBtnNav.onclick = (e) => { e.preventDefault(); calculatorModal.style.display = "flex"; };
         openBtnFooter.onclick = (e) => { e.preventDefault(); calculatorModal.style.display = "flex"; };
         closeBtnCalc.onclick = () => { calculatorModal.style.display = "none"; };
 
         window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-            if (event.target == calculatorModal) {
-                calculatorModal.style.display = "none";
-            }
-        }
+            if (event.target == modal) modal.style.display = "none";
+            if (event.target == calculatorModal) calculatorModal.style.display = "none";
+        };
 
-        /**
-         * Calculator Function
-         * NOTE: This function provides an ESTIMATED rate as it cannot use a live API key.
-         * For production use, please integrate a real Distance Matrix API (like Google Maps) here.
-         */
+        // Calculator Function
         function calculateRate() {
             const fromPin = document.getElementById("fromPin").value.trim();
             const toPin = document.getElementById("toPin").value.trim();
@@ -741,20 +759,16 @@
                 return;
             }
 
-            // Calculate Volumetric Weight: (L * W * H) / 5000 (standard IATA factor)
             let volumetricWeight = 0;
             if (!isNaN(length) && !isNaN(width) && !isNaN(height) && length > 0 && width > 0 && height > 0) {
                 volumetricWeight = (length * width * height) / 5000;
             }
             let finalWeight = Math.max(actualWeight, volumetricWeight);
 
-            // --- Simplified Fallback Logic (Mock calculation for demonstration) ---
-            let distance_category;
-            let rate = 0;
-            
-            // Simulating distance check using pincode length difference 
+            // Mock distance logic
             let pinDifference = Math.abs(parseInt(fromPin.substring(0, 3)) - parseInt(toPin.substring(0, 3)));
-            
+            let distance_category, rate = 0;
+
             if (pinDifference < 20) { 
                 distance_category = "Local/City (approx 1-500 km)";
                 rate = 25; 
@@ -767,21 +781,22 @@
             }
 
             let total = rate * finalWeight;
-            
+
             resultBox.innerHTML = `
                 <div style="text-align: center; margin-bottom: 10px; color: yellow;">
                     *** Showing Estimated Rate (No Live API) ***
                 </div>
-                **Service Category: <b>${distance_category}</b>**<br>
+                <b>Service Category:</b> ${distance_category}<br>
                 Actual Weight: <b>${actualWeight.toFixed(2)} kg</b><br>
                 ${volumetricWeight > 0 ? `Volumetric Weight: <b>${volumetricWeight.toFixed(2)} kg</b><br>` : ''}
                 <hr>
                 Charged Weight: <b>${finalWeight.toFixed(2)} kg</b><br>
                 Rate (per kg): <b>₹${rate}</b><br>
                 <hr>
-                Total Estimated Cost: <b>₹${total.toFixed(2)}</b>
+                <span style="color:limegreen; font-weight:bold;">
+                    Total Estimated Cost: ₹${total.toFixed(2)}
+                </span>
             `;
-            // --- End of Simplified Fallback Logic ---
         }
     </script>
     </body>
