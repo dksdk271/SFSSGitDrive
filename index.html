@@ -1,260 +1,149 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>SFSS Courier — Fast · Secure · Reliable</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta name="description" content="SFSS Courier — Fast, secure & reliable deliveries across India. Same-day, next-day and bulk logistics with real-time tracking." />
+  <meta name="keywords" content="SFSS, Courier, Logistics, Same Day Delivery, Track Shipment, Noida" />
+  <link rel="icon" href="logo.png" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
-    <div class="wrap">
-      <a class="brand" href="#">
-        <img src="images/logo.png" alt="SFSS" onerror="this.onerror=null;this.src='https://placehold.co/140x50/2b3947/f0f2f5?text=SFSS+Logo'">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="logo.png" alt="SFSS Logo" class="logo" />
         <div class="brand-text">
           <h1>SFSS Courier</h1>
-          <small>Fast · Secure · Reliable</small>
+          <p class="tag">Fast · Secure · Reliable</p>
         </div>
-      </a>
+      </div>
       <nav class="nav">
-        <a href="#hero">Home</a>
-        <a href="#about">About</a>
         <a href="#services">Services</a>
+        <a href="#calculator">Rate Calculator</a>
         <a href="#track">Track</a>
         <a href="#contact">Contact</a>
-        <a href="#" id="open-calculator-btn" class="btn small">Rate Calculator</a>
       </nav>
+      <a class="cta whatsapp" href="https://wa.me/919627051087" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </header>
 
   <main>
-    <section id="hero" class="hero">
-      <div class="wrap hero-inner">
-        <div class="hero-left">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
           <h2>Fast, Secure & Reliable Deliveries</h2>
-          <p class="lead">SFSS Courier connects businesses & customers with precision. Instant quotes, realtime tracking and trusted support — across India.</p>
-          <div class="cta-row">
-            <a href="#contact" class="btn primary large">Get a Quick Quote</a>
-            <a href="#track" class="btn ghost large">Track Shipment</a>
+          <p>SFSS Courier connects businesses & customers with precision. Instant quotes, realtime tracking and trusted support — across India.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#calculator">Get a Quick Quote</a>
+            <a class="btn ghost" href="#track">Track Shipment</a>
           </div>
         </div>
-
-        <div class="hero-right">
-          <div class="rate-card" id="rate-card">
-            <h3>Quick Rate Calculator</h3>
-            <p class="muted">Enter pincodes & weight — get instant estimate</p>
-
-            <label>From Pincode</label>
-            <input id="fromPin" type="text" placeholder="eg. 110001">
-
-            <label>To Pincode</label>
-            <input id="toPin" type="text" placeholder="eg. 400001">
-
-            <label>Weight (kg)</label>
-            <input id="weight" type="number" min="0.1" step="0.1" placeholder="e.g. 2.5">
-
-            <div class="dim-row">
-              <input id="length" type="number" placeholder="L (cm)" min="0" step="0.1">
-              <input id="width"  type="number" placeholder="W (cm)" min="0" step="0.1">
-              <input id="height" type="number" placeholder="H (cm)" min="0" step="0.1">
+        <div class="hero-card">
+          <div class="card-header">Quick Rate Calculator</div>
+          <form id="rateForm" class="calc-form" onsubmit="return false;">
+            <label>From Pincode <input id="fromP" placeholder="eg. 110001" /></label>
+            <label>To Pincode <input id="toP" placeholder="eg. 400001" /></label>
+            <label>Weight (kg) <input id="weight" placeholder="e.g. 2.5" /></label>
+            <div class="dims">
+              <input id="L" placeholder="L (cm)" /><input id="W" placeholder="W (cm)" /><input id="H" placeholder="H (cm)" />
             </div>
-
-            <button class="btn primary" id="calc-btn">Calculate</button>
-
-            <div id="result" class="result">
-              <div class="small-muted">Result will appear here</div>
-            </div>
-          </div>
+            <button class="btn primary" onclick="calculateRate()">Calculate</button>
+            <div id="rateResult" class="rate-result">Result will appear here</div>
+          </form>
+          <div class="small-note">Address: Sector 63A, Noida | Call: +91 9627051087 | Email: dksdk271@gmail.com</div>
         </div>
       </div>
     </section>
 
-    <section id="about" class="section">
-      <div class="wrap grid about-grid">
-        <div>
-          <h2>Who we are</h2>
-          <p>SFSS Courier combines 20+ years of logistics experience with modern tech. We handle small parcels to large bulk shipments with care and speed.</p>
-
-          <ul class="features-list">
-            <li><i class="fas fa-shipping-fast"></i> Same-day & Next-day options</li>
-            <li><i class="fas fa-lock"></i> Secure handling & insurance</li>
-            <li><i class="fas fa-map-marked-alt"></i> Pan-India network</li>
-          </ul>
-        </div>
-        <div class="about-media">
-          <img src="https://placehold.co/720x420/2b3947/f0f2f5?text=Warehouse+&+Fleet" alt="warehouse">
-        </div>
-      </div>
-    </section>
-
-    <section id="services" class="section section-alt">
-      <div class="wrap">
-        <h2 class="center">Our Services</h2>
-        <div class="grid cards">
+    <section id="services" class="section services">
+      <div class="container">
+        <h3>Our Services</h3>
+        <div class="cards">
           <div class="card">
-            <i class="fas fa-plane fa-2x"></i>
-            <h3>Air Freight</h3>
+            <h4>Air Freight</h4>
             <p>Express global air shipments for urgent cargo.</p>
           </div>
           <div class="card">
-            <i class="fas fa-truck fa-2x"></i>
-            <h3>Ground Logistics</h3>
+            <h4>Ground Logistics</h4>
             <p>Cost-effective domestic transport with large coverage.</p>
           </div>
           <div class="card">
-            <i class="fas fa-warehouse fa-2x"></i>
-            <h3>Warehousing</h3>
+            <h4>Warehousing</h4>
             <p>Secure, climate-controlled storage & inventory handling.</p>
           </div>
           <div class="card">
-            <i class="fas fa-satellite fa-2x"></i>
-            <h3>Real-time Tracking</h3>
+            <h4>Real-time Tracking</h4>
             <p>24/7 tracking updates and notifications.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="track" class="section">
-      <div class="wrap grid track-grid">
-        <div>
-          <h2>Track Your Shipment</h2>
-          <p>Enter your AWB / Tracking Number to see the latest status.</p>
-
-          <div class="track-box">
-            <input id="track-awb" placeholder="Enter AWB e.g. SFSS123456" />
-            <button id="btn-track" class="btn">Track</button>
-
-            <div id="track-result" class="track-result muted">
-              <div class="small-muted">No tracking data yet. Owner can add tracking via Admin panel.</div>
-            </div>
-          </div>
-
-          <p class="muted small">If you are the owner, open Admin panel to add or update AWBs.</p>
-          <a id="open-admin" class="btn ghost small">Open Admin (local)</a>
+    <section id="track" class="section track">
+      <div class="container">
+        <h3>Track Your Shipment</h3>
+        <p>Enter your AWB / Tracking Number to see the latest status.</p>
+        <div class="track-row">
+          <input id="awb" placeholder="Enter AWB e.g. SFSS123456" />
+          <button class="btn primary" onclick="trackAWB()">Track</button>
         </div>
+        <div id="trackResult" class="track-result">No tracking data yet. Owner can add tracking via Admin panel.</div>
+        <details class="admin">
+          <summary>Admin Panel (owner only - local)</summary>
+          <div class="admin-panel">
+            <input id="adminAwb" placeholder="AWB (e.g. SFSS123456)" />
+            <select id="adminStatus">
+              <option>Picked up</option>
+              <option>In transit</option>
+              <option>Out for delivery</option>
+              <option>Delivered</option>
+            </select>
+            <input id="adminNote" placeholder="Note (optional)" />
+            <button class="btn" onclick="adminAdd()">Add/Update</button>
+            <div class="hint">Data saved to your browser (localStorage). To use across devices you need a server backend.</div>
+          </div>
+        </details>
+      </div>
+    </section>
 
-        <div class="timeline-sample">
-          <h3>Live Sample Timeline</h3>
-          <div class="timeline" id="timeline-sample"></div>
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h3>Contact</h3>
+        <div class="contact-grid">
+          <div>
+            <p><strong>Address</strong><br/>Sector 63A, Noida</p>
+            <p><strong>Phone / WhatsApp</strong><br/>+91 9627051087</p>
+            <p><strong>Email</strong><br/>dksdk271@gmail.com</p>
+            <p><strong>Why choose SFSS?</strong><br/>Transparent pricing · Real-time tracking · Dedicated support</p>
+          </div>
+          <div>
+            <form id="quoteForm" onsubmit="return false;">
+              <label>Full Name <input id="qName" required/></label>
+              <label>Email <input id="qEmail" type="email" required/></label>
+              <label>Origin Pincode <input id="qFrom" required/></label>
+              <label>Destination Pincode <input id="qTo" required/></label>
+              <label>Shipment Details <textarea id="qDetails" rows="3"></textarea></label>
+              <div class="form-actions">
+                <button class="btn primary" onclick="sendQuote()">Request Quote</button>
+                <button class="btn ghost" type="reset">Reset</button>
+              </div>
+              <div id="quoteMessage" class="small-note"></div>
+            </form>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section section-dark">
-      <div class="wrap contact-wrap">
-        <div>
-          <h2>Get Your Instant Shipping Quote</h2>
-          <p class="muted">Fill the form. Correct captcha required. On submit we will open WhatsApp and send an email.</p>
-
-          <form id="quote-form" class="quote-form" autocomplete="off" method="post" action="submit_quote.php">
-            <label>Full Name</label>
-            <input id="name" name="name" required>
-
-            <label>Email Address</label>
-            <input id="email" name="email" type="email" required>
-
-            <label>Origin Pincode</label>
-            <input id="origin" name="origin" required>
-
-            <label>Destination Pincode</label>
-            <input id="destination" name="destination" required>
-
-            <label>Shipment Details (Weight, Dimensions, etc.)</label>
-            <textarea id="details" name="details" rows="4" required></textarea>
-
-            <div class="form-group captcha">
-              <label id="captcha-question">Solve:</label>
-              <input type="text" id="captcha" name="captcha" placeholder="Answer" style="width:140px;">
-              <button type="button" id="check-captcha" class="btn">Check</button>
-              <div id="captcha-status" class="captcha-status"></div>
-            </div>
-
-            <div class="form-actions">
-              <button type="submit" class="btn primary">Request Quote</button>
-              <button type="reset" class="btn ghost">Reset</button>
-            </div>
-          </form>
-        </div>
-
-        <div>
-          <div class="contact-card">
-            <h3>Contact Info</h3>
-            <p><strong>Email:</strong> <span id="contact-email">dksdk271@gmail.com</span></p>
-            <p><strong>WhatsApp:</strong> <span id="contact-wa">+91 9627051087</span></p>
-            <p><strong>Phone:</strong> +91 9627051087</p>
-            <p class="muted small">We reply quickly on WhatsApp for quote requests.</p>
-          </div>
-
-          <div class="trust-card">
-            <h4>Why choose SFSS?</h4>
-            <ul>
-              <li>Transparent pricing</li>
-              <li>Real-time tracking</li>
-              <li>Dedicated support</li>
-            </ul>
-        </div>
-        </div>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="f-left">© 2025 SFSS Courier — All rights reserved.</div>
+        <div class="f-right">123 Logistics Park, Sector 63A, Noida</div>
       </div>
-    </section>
-
+    </footer>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap footer-grid">
-      <div>
-        <img src="images/logo.png" alt="logo" style="height:48px;" onerror="this.src='https://placehold.co/140x50/2b3947/f0f2f5?text=SFSS'">
-        <p class="muted">© 2025 SFSS Courier — All rights reserved.</p>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <a href="#services">Services</a><br>
-        <a href="#contact">Request Quote</a><br>
-        <a href="#track">Track Shipment</a>
-      </div>
-      <div>
-        <h4>Address</h4>
-        <p>123 Logistics Park, City, India</p>
-      </div>
-    </div>
-  </footer>
-
-  <div id="admin-modal" class="modal">
-    <div class="modal-box">
-      <button class="modal-close" id="admin-close">&times;</button>
-      <h3>Admin Panel (local)</h3>
-      <p>Manage tracking entries (stored locally in browser). Use this only on owner machine.</p>
-
-      <div class="admin-row">
-        <input id="admin-awb" placeholder="AWB (e.g. SFSS123456)">
-        <select id="admin-status">
-          <option value="Picked">Picked up</option>
-          <option value="InTransit">In Transit</option>
-          <option value="AtHub">Arrived at Hub</option>
-          <option value="OutForDelivery">Out for Delivery</option>
-          <option value="Delivered">Delivered</option>
-        </select>
-        <input id="admin-note" placeholder="Note (optional)">
-        <button id="admin-add" class="btn">Add/Update</button>
-      </div>
-
-      <div id="admin-list" class="admin-list"></div>
-      <div class="admin-foot">
-        <small class="muted">Data saved to your browser (localStorage). To use across devices you need a server backend.</small>
-      </div>
-    </div>
-  </div>
-
-  <div id="quoteModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn">&times;</span>
-      <h4>Quote Request Received!</h4>
-      <p>Thank you — your request has been received. We'll contact you soon.</p>
-    </div>
-  </div>
-
-  <script src="script.js" defer></script>
+  <script src="app.js"></script>
 </body>
 </html>
